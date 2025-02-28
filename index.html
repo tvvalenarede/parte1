@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TVVALENAREDE REDE SOCIAL 2025</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background-color: #FFA500;
+            font-family: Arial, sans-serif;
+        }
+
+        .header {
+            text-align: center;
+            color: #000;
+            font-size: 2.5em;
+            text-shadow: 2px 2px 4px white;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            display: flex;
+            gap: 20px;
+        }
+
+        .main-content {
+            flex: 2;
+        }
+
+        .sidebar {
+            flex: 1;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        .profile-photo {
+            width: 200px;
+            height: 200px;
+            border: 3px solid black;
+            border-radius: 50%;
+            margin: 0 auto 20px;
+            background-color: white;
+            overflow: hidden;
+        }
+
+        .botao-menu {
+            width: 100%;
+            padding: 12px;
+            margin: 5px 0;
+            background-color: black;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .registration-form {
+            background-color: rgba(255,255,255,0.8);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        .chat-box {
+            background-color: white;
+            padding: 15px;
+            border-radius: 10px;
+            height: 300px;
+            overflow-y: auto;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                order: -1;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <h1 class="header">TVVALENAREDE REDE SOCIAL 2025</h1>
+    
+    <div class="container">
+        <div class="main-content">
+            <div class="profile-photo">
+                <!-- Foto de perfil -->
+                <input type="file" id="fotoPerfil" style="display: none;">
+                <label for="fotoPerfil" style="cursor: pointer;">
+                    <img src="placeholder.jpg" alt="Foto de Perfil" style="width: 100%; height: 100%; object-fit: cover;">
+                </label>
+            </div>
+
+            <div class="registration-form">
+                <h2>Cadastro (50 Vagas)</h2>
+                <input type="text" placeholder="Nome Completo" style="width: 100%; margin: 5px 0; padding: 8px;">
+                <input type="email" placeholder="E-mail" style="width: 100%; margin: 5px 0; padding: 8px;">
+                <input type="password" placeholder="Senha" style="width: 100%; margin: 5px 0; padding: 8px;">
+                <button style="background-color: black; color: white; padding: 10px; width: 100%; margin-top: 10px;">
+                    Cadastrar
+                </button>
+            </div>
+
+            <div class="chat-box">
+                <h2>Chat</h2>
+                <div id="mensagens" style="height: 200px; overflow-y: auto;"></div>
+                <input type="text" placeholder="Digite sua mensagem" style="width: 70%; padding: 8px;">
+                <button style="background-color: black; color: white; padding: 8px;">Enviar</button>
+            </div>
+        </div>
+
+        <div class="sidebar">
+            <button class="botao-menu">MADE CENTER</button>
+            <button class="botao-menu">J.E.C.S</button>
+            <button class="botao-menu">BAR DO OSMAR</button>
+            <button class="botao-menu">SERGIUS ALIANÇAS</button>
+            <button class="botao-menu">SERGINHOS PNEUS</button>
+            <button class="botao-menu">CASA 3 IRMÃOS</button>
+            <button class="botao-menu">CASA DO NORDESTINO</button>
+            <button class="botao-menu">FUTEBOL AO VIVO</button>
+            <button class="botao-menu">ARQUIVO TVVALENAREDE</button>
+            <button class="botao-menu">VÍDEOS REELS</button>
+            <button class="botao-menu">FACEBOOK</button>
+            <button class="botao-menu">INSTAGRAM</button>
+            <button class="botao-menu">WHATSAPP</button>
+            <button class="botao-menu">YOUTUBE</button>
+        </div>
+    </div>
+
+    <script>
+        // Contador de cadastros
+        let cadastros = 0;
+        
+        document.querySelector('button').addEventListener('click', function() {
+            if(cadastros >= 50) {
+                alert('Limite de cadastros atingido!');
+                return;
+            }
+            cadastros++;
+            // Adicionar lógica de cadastro aqui
+        });
+
+        // Upload de foto
+        document.getElementById('fotoPerfil').addEventListener('change', function(e) {
+            const reader = new FileReader();
+            reader.onload = function() {
+                document.querySelector('.profile-photo img').src = reader.result;
+            }
+            reader.readAsDataURL(e.target.files[0]);
+        });
+
+        // Chat simples
+        document.querySelector('.chat-box button').addEventListener('click', function() {
+            const msg = document.querySelector('.chat-box input').value;
+            const div = document.createElement('div');
+            div.textContent = msg;
+            document.getElementById('mensagens').appendChild(div);
+            document.querySelector('.chat-box input').value = '';
+        });
+    </script>
+</body>
+</html>
