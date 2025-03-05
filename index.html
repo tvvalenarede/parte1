@@ -1,184 +1,136 @@
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TVVALENAREDE REDE SOCIAL 2025</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 20px;
-            background: linear-gradient(rgba(0, 0, 255, 0.5), rgba(0, 0, 255, 0.5)),
-                        url('https://example.com/bandeira-brasil.jpg');
-            background-size: cover;
-            font-family: Arial, sans-serif;
-        }
+import pygame
+import sys
 
-        header {
-            text-align: center;
-            padding: 20px;
-            background-color: rgba(255, 255, 255, 0.9);
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
+# Inicialização do Pygame
+pygame.init()
 
-        .main-title {
-            color: #009c3b;
-            font-size: 2.5em;
-            text-shadow: 2px 2px #002776;
-        }
+# Configurações da janela
+WIDTH = 800
+HEIGHT = 600
+FPS = 60
 
-        .container {
-            display: flex;
-            gap: 20px;
-        }
+# Cores
+BLUE_SKY = (135, 206, 235)
+GROUND_GREEN = (34, 139, 34)
+RED = (255, 0, 0)
+BROWN = (139, 69, 19)
+YELLOW = (255, 255, 0)
+BLACK = (0, 0, 0)
 
-        .main-content {
-            flex: 3;
-            background-color: rgba(255, 255, 255, 0.85);
-            padding: 20px;
-            border-radius: 10px;
-        }
+# Configurações do jogador
+GRAVITY = 0.8
+JUMP_FORCE = -18
+PLAYER_SPEED = 8
 
-        .side-buttons {
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
+class Player(pygame.sprite.Sprite):
+    def __init__(self):
+        super().__init__()
+        self.image = pygame.Surface((40, 60))
+        self._draw_mario()
+        self.rect = self.image.get_rect(center=(100, HEIGHT - 100))
+        self.velocity = 0
+        self.on_ground = True
 
-        .side-button {
-            padding: 15px;
-            background-color: #000000;
-            border: 2px solid #009C3B;
-            border-radius: 5px;
-            cursor: pointer;
-            font-weight: bold;
-        }
+    def _draw_mario(self):
+        # Desenha o Mario simplificado
+        self.image.fill(BLUE_SKY)  # Fundo transparente
+        pygame.draw.rect(self.image, RED, (0, 0, 40, 20))  # Chapéu
+        pygame.draw.rect(self.image, (255, 192, 203), (10, 20, 20, 30))  # Rosto
+        pygame.draw.rect(self.image, RED, (0, 40, 40, 20))  # Corpo
+        pygame.draw.rect(self.image, BLACK, (0, 0, 40, 60), 2)  # Borda
 
-        .registration-box {
-            margin-bottom: 20px;
-            padding: 15px;
-            background-color: #f0f0f0;
-            border-radius: 8px;
-        }
-
-        .chat-box {
-            height: 300px;
-            overflow-y: auto;
-            border: 1px solid #ccc;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-
-        button {
-            background-color: #009C3B;
-            color: white;
-            padding: 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <h1 class="main-title">TVVALENAREDE REDE SOCIAL 2025</h1>
-    </header>
-
-    <div class="container">
-        <div class="main-content">
-            <div class="registration-box">
-                <h2>Cadastro (dos nossos amigos da TVVALENAREDE)</h2>
-                <form id="registrationForm">
-                    <input type="text" placeholder="Nome" required>
-                    <input type="email" placeholder="E-mail" required>
-                    <input type="password" placeholder="Senha" required>
-                    <input type="file" accept="image/*">
-                    <button type="submit">Cadastrar</button>
-                </form>
-            </div>
-
-            <div>
-                <button>Achar Fotos</button>
-                <button>Achar Comentários</button>
-            </div>
-
-            <h3>Chat</h3>
-            <div class="chat-box" id="chatBox"></div>
-            <input type="text" placeholder="Digite sua mensagem" id="messageInput">
-            <button onclick="sendMessage()">Enviar</button>
-      
-    <script>
-        let users = [];
+    def update(self, mouse_click):
+        # Movimento pelo mouse
+        mouse_x, mouse_y = pygame.mouse.get_pos()
         
-        document.getElementById('registrationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            if(users.length >= 50) {
-                alert('Limite de cadastros atingido!');
-                return;
-            }
-            // Adicionar lógica de cadastro aqui
-            users.push({
-                name: this[0].value,
-                email: this[1].value,
-                password: this[2].value
-            });
-            alert('Cadastro realizado com sucesso!');
-            this.reset();
-        });
+        # Movimento horizontal
+        if mouse_x > self.rect.x + 50:
+            self.rect.x += PLAYER_SPEED
+        elif mouse_x < self.rect.x - 50:
+            self.rect.x -= PLAYER_SPEED
 
-        function sendMessage() {
-            const input = document.getElementById('messageInput');
-            const chatBox = document.getElementById('chatBox');
-            chatBox.innerHTML += `<p>${input.value}</p>`;
-            input.value = '';
-        }
-    </script>
-</body>
-</html>
+        # Salto
+        if mouse_click and self.on_ground:
+            self.velocity = JUMP_FORCE
+            self.on_ground = False
 
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <!-- ... (o head permanece igual) ... -->
-    <style>
-        /* ... (estilos existentes permanecem iguais) ... */
+        # Aplicar gravidade
+        self.velocity += GRAVITY
+        self.rect.y += self.velocity
 
-        .bottom-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 20px;
-            justify-content: center;
-        }
-    </style>
-</head>
-<body>
-    <!-- ... (cabeçalho e conteúdo principal permanecem iguais) ... -->
+        # Limitar à tela
+        if self.rect.bottom > HEIGHT - 50:
+            self.rect.bottom = HEIGHT - 50
+            self.on_ground = True
+            self.velocity = 0
 
-    <div class="bottom-buttons">
-        <button class="side-button">1 MADE CENTER</button>
-        <button class="side-button">2 J.E.C.S</button>
-        <button class="side-button">3 SERGIUS ALIANÇAS</button>
-        <button class="side-button">4 BAR DO OSMAR</button>
-        <button class="side-button">5 SERGINHO PNEUS</button>
-        <button class="side-button">6 CASA 3 IRMÃOS</button>
-        <button class="side-button">7 CASA DO NORDESTINO</button>
-        <button class="side-button">8 SUPLAUTO</button>
-        <button class="side-button">9 FACEBOOK</button>
-        <button class="side-button">10 INSTAGRAM</button>
-        <button class="side-button">11 TIKTOK</button>
-        <button class="side-button">12 YOUTUBE</button>
-        <button class="side-button">13 REELS</button>
-        <button class="side-button">14 FUTEBOL</button>
-    </div>
+class Obstacle(pygame.sprite.Sprite):
+    def __init__(self, x, y):
+        super().__init__()
+        self.image = pygame.Surface((80, 50))
+        self.image.fill(BROWN)
+        self.rect = self.image.get_rect(topleft=(x, y))
 
-    <script>
-        /* ... (o script permanece igual) ... */
-    </script>
-</body>
-</html>
+def main():
+    screen = pygame.display.set_mode((WIDTH, HEIGHT))
+    pygame.display.set_caption("PyMario")
+    clock = pygame.time.Clock()
 
+    # Grupos de sprites
+    all_sprites = pygame.sprite.Group()
+    obstacles = pygame.sprite.Group()
 
-        
-          
+    # Criar jogador
+    player = Player()
+    all_sprites.add(player)
+
+    # Criar plataformas e obstáculos
+    ground = Obstacle(0, HEIGHT - 50)
+    ground.image = pygame.Surface((WIDTH, 50))
+    ground.image.fill(GROUND_GREEN)
+    obstacles.add(ground)
+    all_sprites.add(ground)
+
+    for x in range(300, 600, 150):
+        obstacle = Obstacle(x, HEIGHT - 150)
+        obstacles.add(obstacle)
+        all_sprites.add(obstacle)
+
+    mouse_click = False
+    running = True
+
+    while running:
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                running = False
+            if event.type == pygame.MOUSEBUTTONDOWN:
+                mouse_click = True
+            if event.type == pygame.MOUSEBUTTONUP:
+                mouse_click = False
+
+        # Atualização do jogo
+        all_sprites.update(mouse_click)
+
+        # Colisões
+        if pygame.sprite.spritecollide(player, obstacles, False):
+            if player.velocity > 0:
+                player.on_ground = True
+                player.velocity = 0
+
+        # Desenho
+        screen.fill(BLUE_SKY)
+        all_sprites.draw(screen)
+
+        # Desenhar instruções
+        font = pygame.font.Font(None, 36)
+        text = font.render("Mova o mouse para os lados e clique para pular!", True, BLACK)
+        screen.blit(text, (50, 50))
+
+        pygame.display.flip()
+        clock.tick(FPS)
+
+    pygame.quit()
+    sys.exit()
+
+if __name__ == "__main__":
+    main()
