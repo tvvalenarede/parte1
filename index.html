@@ -1,80 +1,70 @@
+<!DOCTYPE html>
 <html>
-  <head>
-    <title>Sergius Aliançás e Óculos</title>
-    <meta charset="utf-8">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Envio de Informações</title>
     <style>
-      body {
-        background-color: orange;
-        font-family: Arial;
-      }
-      h1, h2 {
-        text-align: center;
-      }
-      form {
-        width: 500px;
-        margin: auto;
-        background-color: white;
-        padding: 20px;
-        border-radius: 10px;
-      }
-      label {
-        display: block;
-        margin-bottom: 5px;
-      }
-      input,textarea {
-        width: 100%;
-        margin-bottom: 10px;
-        padding: 5px;
-      }
-      button {
-        width: 100%;
-        padding: 10px;
-        background-color: green;
-        color: white;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-      }
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
     </style>
-  </head>
-  <body>
-    <h1>SERGIUS ALIANÇAS E ÓCULOS</h1>
-    <h2>Rua 7 de Setembro,479 Tremenbé – S.P</h2>
-    <form id="contact-form">
-      <label for="name">Nome:</label>
-      <input type="text" id="name" name="name" placeholder="Nome">
-      <label for="address">Endereço:</label>
-      <input type="text" id="address" name="address" placeholder="Endereço">
-      <label for="telephone">Teléfone:</label>
-      <input type="text" id="telephone" name="telephone" placeholder="Teléfone">
-      <label for="message">Mensagem:</label>
-      <textarea id="message" name="message" placeholder="Mensagem" rows="5" cols="50"></textarea>
-      <button type="submit">Enviar</button>
+</head>
+<body>
+    <h2>Formulário de Contato</h2>
+    <form action="https://formspree.io/f/SEU_FORM_ID_AQUI" method="POST">
+        <div class="form-group">
+            <label for="nome">Nome completo:</label>
+            <input type="text" id="nome" name="nome" required>
+        </div>
+
+        <div class="form-group">
+            <label for="endereco">Endereço:</label>
+            <input type="text" id="endereco" name="endereco" required>
+        </div>
+
+        <div class="form-group">
+            <label for="telefone">Telefone:</label>
+            <input type="tel" id="telefone" name="telefone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
+        </div>
+
+        <input type="hidden" name="_replyto" value="tvrbrazil@gmail.com">
+        
+        <button type="submit">Enviar Informações</button>
     </form>
-    <script type="text/javascript" src="https://cdn.emailjs.com/dist/min.js"></script>
-    <script>
-      (function() {
-        emailjs.init("USER_ID"); // Substitua pelo seu ID de usuário do EmailJS
-        document.getElementById('contact-form').addEventListener('submit', function(event) {
-          event.preventDefault();
-          // Valida o formulário
-          var name = document.getElementById('name').value.trim();
-          var address = document.getElementById('address').value.trim();
-          var telephone = document.getElementById('telephone').value.trim();
-          var message = document.getElementById('message').value.trim();
-          if (name == '' || address == '' || telephone == '' || message == '') {
-            alert('Por favor, preencha todos os campos.');
-            return;
-          }
-          // Envia o e-mail
-          emailjs.sendForm('service_id', 'template_id', this) // Substitua 'service_id' e 'template_id' pelos seus IDs reais
-            .then(function() {
-              alert('Mensagem enviada com sucesso!');
-            }, function(error) {
-              alert('Erro ao enviar mensagem. Por favor, tentar novamente mais tarde.', error);
-            });
-        });
-      })();
-    </script>
-  </body>
+</body>
 </html>
