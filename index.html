@@ -1,136 +1,80 @@
-import pygame
-import sys
-
-# Inicialização do Pygame
-pygame.init()
-
-# Configurações da janela
-WIDTH = 800
-HEIGHT = 600
-FPS = 60
-
-# Cores
-BLUE_SKY = (135, 206, 235)
-GROUND_GREEN = (34, 139, 34)
-RED = (255, 0, 0)
-BROWN = (139, 69, 19)
-YELLOW = (255, 255, 0)
-BLACK = (0, 0, 0)
-
-# Configurações do jogador
-GRAVITY = 0.8
-JUMP_FORCE = -18
-PLAYER_SPEED = 8
-
-class Player(pygame.sprite.Sprite):
-    def __init__(self):
-        super().__init__()
-        self.image = pygame.Surface((40, 60))
-        self._draw_mario()
-        self.rect = self.image.get_rect(center=(100, HEIGHT - 100))
-        self.velocity = 0
-        self.on_ground = True
-
-    def _draw_mario(self):
-        # Desenha o Mario simplificado
-        self.image.fill(BLUE_SKY)  # Fundo transparente
-        pygame.draw.rect(self.image, RED, (0, 0, 40, 20))  # Chapéu
-        pygame.draw.rect(self.image, (255, 192, 203), (10, 20, 20, 30))  # Rosto
-        pygame.draw.rect(self.image, RED, (0, 40, 40, 20))  # Corpo
-        pygame.draw.rect(self.image, BLACK, (0, 0, 40, 60), 2)  # Borda
-
-    def update(self, mouse_click):
-        # Movimento pelo mouse
-        mouse_x, mouse_y = pygame.mouse.get_pos()
-        
-        # Movimento horizontal
-        if mouse_x > self.rect.x + 50:
-            self.rect.x += PLAYER_SPEED
-        elif mouse_x < self.rect.x - 50:
-            self.rect.x -= PLAYER_SPEED
-
-        # Salto
-        if mouse_click and self.on_ground:
-            self.velocity = JUMP_FORCE
-            self.on_ground = False
-
-        # Aplicar gravidade
-        self.velocity += GRAVITY
-        self.rect.y += self.velocity
-
-        # Limitar à tela
-        if self.rect.bottom > HEIGHT - 50:
-            self.rect.bottom = HEIGHT - 50
-            self.on_ground = True
-            self.velocity = 0
-
-class Obstacle(pygame.sprite.Sprite):
-    def __init__(self, x, y):
-        super().__init__()
-        self.image = pygame.Surface((80, 50))
-        self.image.fill(BROWN)
-        self.rect = self.image.get_rect(topleft=(x, y))
-
-def main():
-    screen = pygame.display.set_mode((WIDTH, HEIGHT))
-    pygame.display.set_caption("PyMario")
-    clock = pygame.time.Clock()
-
-    # Grupos de sprites
-    all_sprites = pygame.sprite.Group()
-    obstacles = pygame.sprite.Group()
-
-    # Criar jogador
-    player = Player()
-    all_sprites.add(player)
-
-    # Criar plataformas e obstáculos
-    ground = Obstacle(0, HEIGHT - 50)
-    ground.image = pygame.Surface((WIDTH, 50))
-    ground.image.fill(GROUND_GREEN)
-    obstacles.add(ground)
-    all_sprites.add(ground)
-
-    for x in range(300, 600, 150):
-        obstacle = Obstacle(x, HEIGHT - 150)
-        obstacles.add(obstacle)
-        all_sprites.add(obstacle)
-
-    mouse_click = False
-    running = True
-
-    while running:
-        for event in pygame.event.get():
-            if event.type == pygame.QUIT:
-                running = False
-            if event.type == pygame.MOUSEBUTTONDOWN:
-                mouse_click = True
-            if event.type == pygame.MOUSEBUTTONUP:
-                mouse_click = False
-
-        # Atualização do jogo
-        all_sprites.update(mouse_click)
-
-        # Colisões
-        if pygame.sprite.spritecollide(player, obstacles, False):
-            if player.velocity > 0:
-                player.on_ground = True
-                player.velocity = 0
-
-        # Desenho
-        screen.fill(BLUE_SKY)
-        all_sprites.draw(screen)
-
-        # Desenhar instruções
-        font = pygame.font.Font(None, 36)
-        text = font.render("Mova o mouse para os lados e clique para pular!", True, BLACK)
-        screen.blit(text, (50, 50))
-
-        pygame.display.flip()
-        clock.tick(FPS)
-
-    pygame.quit()
-    sys.exit()
-
-if __name__ == "__main__":
-    main()
+<html>
+  <head>
+    <title>Sergius Aliançás e Óculos</title>
+    <meta charset="utf-8">
+    <style>
+      body {
+        background-color: orange;
+        font-family: Arial;
+      }
+      h1, h2 {
+        text-align: center;
+      }
+      form {
+        width: 500px;
+        margin: auto;
+        background-color: white;
+        padding: 20px;
+        border-radius: 10px;
+      }
+      label {
+        display: block;
+        margin-bottom: 5px;
+      }
+      input,textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 5px;
+      }
+      button {
+        width: 100%;
+        padding: 10px;
+        background-color: green;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>SERGIUS ALIANÇAS E ÓCULOS</h1>
+    <h2>Rua 7 de Setembro,479 Tremenbé – S.P</h2>
+    <form id="contact-form">
+      <label for="name">Nome:</label>
+      <input type="text" id="name" name="name" placeholder="Nome">
+      <label for="address">Endereço:</label>
+      <input type="text" id="address" name="address" placeholder="Endereço">
+      <label for="telephone">Teléfone:</label>
+      <input type="text" id="telephone" name="telephone" placeholder="Teléfone">
+      <label for="message">Mensagem:</label>
+      <textarea id="message" name="message" placeholder="Mensagem" rows="5" cols="50"></textarea>
+      <button type="submit">Enviar</button>
+    </form>
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/min.js"></script>
+    <script>
+      (function() {
+        emailjs.init("USER_ID"); // Substitua pelo seu ID de usuário do EmailJS
+        document.getElementById('contact-form').addEventListener('submit', function(event) {
+          event.preventDefault();
+          // Valida o formulário
+          var name = document.getElementById('name').value.trim();
+          var address = document.getElementById('address').value.trim();
+          var telephone = document.getElementById('telephone').value.trim();
+          var message = document.getElementById('message').value.trim();
+          if (name == '' || address == '' || telephone == '' || message == '') {
+            alert('Por favor, preencha todos os campos.');
+            return;
+          }
+          // Envia o e-mail
+          emailjs.sendForm('service_id', 'template_id', this) // Substitua 'service_id' e 'template_id' pelos seus IDs reais
+            .then(function() {
+              alert('Mensagem enviada com sucesso!');
+            }, function(error) {
+              alert('Erro ao enviar mensagem. Por favor, tentar novamente mais tarde.', error);
+            });
+        });
+      })();
+    </script>
+  </body>
+</html>
