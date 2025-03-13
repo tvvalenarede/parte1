@@ -1,70 +1,134 @@
-<!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Envio de Informações</title>
+    <title>TVVALENAREDE - Contato</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            max-width: 600px;
-            margin: 0 auto;
+            background-color: #FFA500; /* Fundo laranja */
+            margin: 0;
             padding: 20px;
+            font-family: Arial, sans-serif;
         }
-        .form-group {
+
+        .rede-social {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .titulo-rede {
+            font-size: 2.5em;
+            color: #000;
+            text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+            margin: 20px 0;
+        }
+
+        .botoes-rede {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .botao-social {
+            padding: 15px;
+            background-color: #FF8C00;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: bold;
+            transition: transform 0.3s;
+        }
+
+        .botao-social:hover {
+            transform: scale(1.05);
+            background-color: #FF6B00;
+        }
+
+        form {
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            border-radius: 10px;
+            max-width: 500px;
+            margin: 30px auto;
+        }
+
+        label, input, textarea {
+            display: block;
+            width: 100%;
             margin-bottom: 15px;
         }
-        label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        input, textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-        button {
+
+        button[type="submit"] {
             background-color: #4CAF50;
             color: white;
-            padding: 12px 20px;
+            padding: 12px 24px;
             border: none;
-            border-radius: 4px;
+            border-radius: 5px;
             cursor: pointer;
             width: 100%;
-        }
-        button:hover {
-            background-color: #45a049;
+            font-size: 1.1em;
         }
     </style>
 </head>
 <body>
-    <h2>Formulário de Contato</h2>
-    <form action="https://formspree.io/f/SEU_FORM_ID_AQUI" method="POST">
-        <div class="form-group">
-            <label for="nome">Nome completo:</label>
-            <input type="text" id="nome" name="nome" required>
+    <div class="rede-social">
+        <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
+        <div class="botoes-rede">
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">1 MADE CENTER</a>
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">2 SERGIUS ALIANÇAS</a>
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">3 BAR DO OSMAR</a>
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">4 CASA IRMÃOS</a>
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">5 J.E.C.S</a>
+            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">6 SERGINHO PNEUS</a>
+            
+            
         </div>
+    </div>
 
-        <div class="form-group">
-            <label for="endereco">Endereço:</label>
-            <input type="text" id="endereco" name="endereco" required>
-        </div>
+    <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="Nome" required>
 
-        <div class="form-group">
-            <label for="telefone">Telefone:</label>
-            <input type="tel" id="telefone" name="telefone" required>
-        </div>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="E-mail" required>
 
-        <div class="form-group">
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="mensagem" rows="4" required></textarea>
-        </div>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
 
-        <input type="hidden" name="_replyto" value="tvrbrazil@gmail.com">
+        <input type="hidden" name="_subject" value="Nova submissão do site">
         
-        <button type="submit">Enviar Informações</button>
+        <button type="submit">Enviar Mensagem</button>
     </form>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('meuFormulario');
+
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Validação do e-mail
+                const email = formulario.email.value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('Por favor, insira um e-mail válido!');
+                    return;
+                }
+
+                // Validação da mensagem
+                if (formulario.mensagem.value.trim().length < 10) {
+                    alert('A mensagem deve ter pelo menos 10 caracteres!');
+                    return;
+                }
+
+                // Confirmação de envio
+                if (confirm('Deseja realmente enviar a mensagem?')) {
+                    formulario.submit();
+                    alert('Mensagem enviada com sucesso!');
+                    formulario.reset();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
