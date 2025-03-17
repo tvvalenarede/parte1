@@ -4,10 +4,37 @@
     <title>TVVALENAREDE - Contato</title>
     <style>
         body {
-            background-color: #FFA500; /* Fundo laranja */
+            background-color: #FFA500;
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+        }
+
+        .sidebar {
+            width: 250px;
+        }
+
+        .botao-preto {
+            display: block;
+            background-color: #000;
+            color: white;
+            padding: 15px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .botao-preto:hover {
+            background-color: #333;
+        }
+
+        .main-content {
+            flex: 1;
         }
 
         .rede-social {
@@ -72,34 +99,47 @@
     </style>
 </head>
 <body>
-    <div class="rede-social">
-        <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
-        <div class="botoes-rede">
-            <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
-            <a href="https://sergiusoculos1000.webnode.page/?_gl=1*u8pmxp*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social"> ACESSE SERGIUS ALIANÇAS</a>
-            <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/?_gl=1*hudngl*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social">ACESSE BAR DO OSMAR</a>
-            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
-            <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
-            <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/?_gl=1*e4p4xw*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ" class="botao-social">ACESSE SERGINHO PNEUS</a>
-            
-            
-        </div>
+    <div class="sidebar">
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">1 Futebol</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">2 Arquivos</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">3 Celebridade Local</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">4 Teleton Animado</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">5 Jequiti Animado</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">6 Entrevistas</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">7 Bate Pronto</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">8 Webecomedy</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">9 Tvvalenarede Live</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">10 Futebol Edição</a>
     </div>
 
-    <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="Nome" required>
+    <div class="main-content">
+        <div class="rede-social">
+            <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
+            <div class="botoes-rede">
+                <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
+                <a href="https://sergiusoculos1000.webnode.page/?_gl=1*u8pmxp*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social"> ACESSE SERGIUS ALIANÇAS</a>
+                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/?_gl=1*hudngl*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social">ACESSE BAR DO OSMAR</a>
+                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
+                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
+                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/?_gl=1*e4p4xw*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ" class="botao-social">ACESSE SERGINHO PNEUS</a>
+            </div>
+        </div>
 
-        <label for="email">E-mail:</label>
-        <input type="email" id="email" name="E-mail" required>
+        <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="Nome" required>
 
-        <label for="mensagem">Mensagem:</label>
-        <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="E-mail" required>
 
-        <input type="hidden" name="_subject" value="Nova submissão do site">
-        
-        <button type="submit">Enviar Mensagem</button>
-    </form>
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
+
+            <input type="hidden" name="_subject" value="Nova submissão do site">
+            
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
