@@ -140,11 +140,8 @@
             <button type="submit">Enviar Mensagem</button>
         </form>
     </div>
-<div align="center">
-  <h1><a href="https://made-center-taubate.webnode.page"> <strong>CLICA AQUI </strong></a></h1>
-  <h1><a href="https://made-center-taubate.webnode.page"><strong>PARA COMPRAR NA MADE CENTER DE TAUBATÉ</strong></a></h1>
-</div>
-<script>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const formulario = document.getElementById('meuFormulario');
 
@@ -172,6 +169,205 @@
                 }
             });
         });
-      </script>
+    </script>
+</body><html>
+<head>
+    <meta charset="UTF-8">
+    <title>TVVALENAREDE - Contato</title>
+    <style>
+        body {
+            background-color: #FFA500;
+            margin: 0;
+            padding: 20px 20px 100px 20px; /* Aumentei o padding inferior */
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* ... (mantive todos os estilos existentes) ... */
+
+        /* NOVO BOTÃO INFERIOR */
+        .botao-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+
+        .botao-inferior:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <!-- Mantive igual a sidebar original -->
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">1 FACEBOOK</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">2 INSTAGRAM</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">3 TIKTOK Local</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">4 FESTA ACEESP</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">5 CORINTHIANS SUB 14</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">6 EDIÇÃO FUTEBOK</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">7 PRIMAVERA</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">8 LYON</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">9 INDEPENDENCIA Live</a>
+        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">10 YOUTUBE</a>
+    </div>
+
+    <div class="main-content">
+        <!-- Mantive igual o conteúdo principal original -->
+        <div class="rede-social">
+            <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
+            <div class="botoes-rede">
+                <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
+                <a href="https://sergiusoculos1000.webnode.page/?_gl=1*u8pmxp*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social"> ACESSE SERGIUS ALIANÇAS</a>
+                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/?_gl=1*hudngl*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social">ACESSE BAR DO OSMAR</a>
+                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
+                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
+                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/?_gl=1*e4p4xw*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ" class="botao-social">ACESSE SERGINHO PNEUS</a>
+            </div>
+        </div>
+
+        <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+            <!-- Mantive igual o formulário original -->
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="Nome" required>
+
+            <label for="email">E-mail:</label>
+            <input type="email" id="email" name="E-mail" required>
+
+            <label for="mensagem">Mensagem:</label>
+            <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
+
+            <input type="hidden" name="_subject" value="Nova submissão do site">
+            
+            <button type="submit">Enviar Mensagem</button>
+        </form>
+    </div>
+
+    <!-- NOVO BOTÃO ADICIONADO AQUI -->
+    <a href="http://youtube.com/tvvalenarede" class="botao-inferior">MADE CENTER DE TAUBATÉ</a>
+
+    <script>
+        // Mantive igual o script original
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('meuFormulario');
+
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Validação do e-mail
+                const email = formulario.email.value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('Por favor, insira um e-mail válido!');
+                    return;
+                }
+
+                // Validação da mensagem
+                if (formulario.mensagem.value.trim().length < 10) {
+                    alert('A mensagem deve ter pelo menos 10 caracteres!');
+                    return;
+                }
+
+                // Confirmação de envio
+                if (confirm('Deseja realmente enviar a mensagem?')) {
+                    formulario.submit();
+                    alert('Mensagem enviada com sucesso!');
+                    formulario.reset();
+                }
+            });
+        });
+    </script>
+</body><html>
+<head>
+    <meta charset="UTF-8">
+    <title>TVVALENAREDE - Contato</title>
+    <style>
+        body {
+            background-color: #FFA500;
+            margin: 0;
+            padding: 20px 20px 100px 20px; /* Aumentei o padding inferior */
+            font-family: Arial, sans-serif;
+            display: flex;
+            gap: 20px;
+            position: relative;
+        }
+
+        /* ... (mantive todos os estilos existentes) ... */
+
+        /* NOVO BOTÃO INFERIOR */
+        .botao-inferior {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: #000000;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            z-index: 1000;
+            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+            transition: background-color 0.3s;
+        }
+
+        .botao-inferior:hover {
+            background-color: #333333;
+        }
+    </style>
+</head>
+<body>
+    
+    </div>
+
+        </form>
+    </div>
+
+    <!-- NOVO BOTÃO ADICIONADO AQUI -->
+    <a href="https://made-center-taubate.webnode.page" class="botao-inferior"> ACESSE AQUI A MADE CENTER DE TAUBATÉ</a>
+
+    <script>
+        // Mantive igual o script original
+        document.addEventListener('DOMContentLoaded', () => {
+            const formulario = document.getElementById('meuFormulario');
+
+            formulario.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                // Validação do e-mail
+                const email = formulario.email.value;
+                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                    alert('Por favor, insira um e-mail válido!');
+                    return;
+                }
+
+                // Validação da mensagem
+                if (formulario.mensagem.value.trim().length < 10) {
+                    alert('A mensagem deve ter pelo menos 10 caracteres!');
+                    return;
+                }
+
+                // Confirmação de envio
+                if (confirm('Deseja realmente enviar a mensagem?')) {
+                    formulario.submit();
+                    alert('Mensagem enviada com sucesso!');
+                    formulario.reset();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
