@@ -1,17 +1,52 @@
-<html>
+<!DOCTYPE html>
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <title>TVVALENAREDE - Contato</title>
     <style>
+        /* NOVO BOTÃO SUPERIOR */
+        .top-container {
+            width: 100%;
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .botao-superior {
+            display: inline-block;
+            background-color: #000;
+            color: white;
+            padding: 25px 50px;
+            font-size: 1.8em;
+            text-decoration: none;
+            border-radius: 12px;
+            transition: all 0.3s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            margin-bottom: 30px;
+        }
+
+        .botao-superior:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+        }
+
         body {
             background-color: #FFA500;
             margin: 0;
             padding: 20px;
             font-family: Arial, sans-serif;
             display: flex;
-            gap: 20px;
+            flex-direction: column;
+            align-items: center;
         }
 
+        .content-container {
+            display: flex;
+            gap: 20px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        /* Mantive os estilos originais abaixo */
         .sidebar {
             width: 250px;
         }
@@ -96,98 +131,7 @@
             width: 100%;
             font-size: 1.1em;
         }
-    </style>
-</head>
-<body>
-    <div class="sidebar">
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">1 Futebol</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">2 Arquivos</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">3 Celebridade Local</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">4 Teleton Animado</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">5 Jequiti Animado</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">6 Entrevistas</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">7 Bate Pronto</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">8 Webecomedy</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">9 Tvvalenarede Live</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">10 Futebol Edição</a>
-    </div>
 
-    <div class="main-content">
-        <div class="rede-social">
-            <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
-            <div class="botoes-rede">
-                <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
-                <a href="https://www.facebook.com/groups/454428378011062?locale=pt_BR" class="botao-social">MADE CENTER GRUPO</a>
-                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/?_gl=1*hudngl*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social">ACESSE BAR DO OSMAR</a>
-                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
-                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
-                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/?_gl=1*e4p4xw*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ" class="botao-social">ACESSE SERGINHO PNEUS</a>
-            </div>
-        </div>
-
-        <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="Nome" required>
-
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="E-mail" required>
-
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
-
-            <input type="hidden" name="_subject" value="Nova submissão do site">
-            
-            <button type="submit">Enviar Mensagem</button>
-        </form>
-    </div>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const formulario = document.getElementById('meuFormulario');
-
-            formulario.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                // Validação do e-mail
-                const email = formulario.email.value;
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Por favor, insira um e-mail válido!');
-                    return;
-                }
-
-                // Validação da mensagem
-                if (formulario.mensagem.value.trim().length < 10) {
-                    alert('A mensagem deve ter pelo menos 10 caracteres!');
-                    return;
-                }
-
-                // Confirmação de envio
-                if (confirm('Deseja realmente enviar a mensagem?')) {
-                    formulario.submit();
-                    alert('Mensagem enviada com sucesso!');
-                    formulario.reset();
-                }
-            });
-        });
-    </script>
-</body><html>
-<head>
-    <meta charset="UTF-8">
-    <title>TVVALENAREDE - Contato</title>
-    <style>
-        body {
-            background-color: #FFA500;
-            margin: 0;
-            padding: 20px 20px 100px 20px; /* Aumentei o padding inferior */
-            font-family: Arial, sans-serif;
-            display: flex;
-            gap: 20px;
-            position: relative;
-        }
-
-        /* ... (mantive todos os estilos existentes) ... */
-
-        /* NOVO BOTÃO INFERIOR */
         .botao-inferior {
             position: fixed;
             bottom: 0;
@@ -211,56 +155,56 @@
     </style>
 </head>
 <body>
-    <div class="sidebar">
-        <!-- Mantive igual a sidebar original -->
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">1 FACEBOOK</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">2 INSTAGRAM</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">3 TIKTOK Local</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">4 FESTA ACEESP</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">5 CORINTHIANS SUB 14</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">6 EDIÇÃO FUTEBOK</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">7 PRIMAVERA</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">8 LYON</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">9 INDEPENDENCIA Live</a>
-        <a href="http://youtobe.com/tvvalenarede" class="botao-preto">10 YOUTUBE</a>
+    <!-- Botão Superior Adicionado -->
+    <div class="top-container">
+        <a href="http://youtube.com/tvvalenarede" class="botao-superior">ACESSE A MADE CENTER E COMPRE ON LINE</a>
     </div>
 
-    <div class="main-content">
-        <!-- Mantive igual o conteúdo principal original -->
-        <div class="rede-social">
-            <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
-            <div class="botoes-rede">
-                <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
-                <a href="https://sergiusoculos1000.webnode.page/?_gl=1*u8pmxp*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social"> ACESSE SERGIUS ALIANÇAS</a>
-                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/?_gl=1*hudngl*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1" class="botao-social">ACESSE BAR DO OSMAR</a>
-                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
-                <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
-                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/?_gl=1*e4p4xw*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ" class="botao-social">ACESSE SERGINHO PNEUS</a>
-            </div>
+<div class="content-container">
+        <div class="sidebar">
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">1 Futebol</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">2 Arquivos</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">3 Celebridade Local</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">4 Teleton Animado</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">5 Jequiti Animado</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">6 Entrevistas</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">7 Bate Pronto</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">8 Webecomedy</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">9 Tvvalenarede Live</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-preto">10 Futebol Edição</a>
         </div>
 
-        <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
-            <!-- Mantive igual o formulário original -->
-            <label for="nome">Nome:</label>
-            <input type="text" id="nome" name="Nome" required>
+  <div class="main-content">
+            <div class="rede-social">
+                <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
+                <div class="botoes-rede">
+                    <a href="https://made-center7.webnode.page" class="botao-social"> ACESSE MADE CENTER</a>
+                    <a href="https://www.facebook.com/groups/454428378011062?locale=pt_BR" class="botao-social">MADE CENTER GRUPO</a>
+                    <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/" class="botao-social">ACESSE BAR DO OSMAR</a>
+                    <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE CASA IRMÃOS</a>
+                    <a href="http://www.youtube.com/tvvalenarede" class="botao-social">ACESSE J.E.C.S</a>
+                    <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/" class="botao-social">ACESSE SERGINHO PNEUS</a>
+                </div>
+            </div>
 
-            <label for="email">E-mail:</label>
-            <input type="email" id="email" name="E-mail" required>
+            <form id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="Nome" required>
 
-            <label for="mensagem">Mensagem:</label>
-            <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
+                <label for="email">E-mail:</label>
+                <input type="email" id="email" name="E-mail" required>
 
-            <input type="hidden" name="_subject" value="Nova submissão do site">
-            
-            <button type="submit">Enviar Mensagem</button>
-        </form>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="Mensagem" rows="5" required></textarea>
+
+                <input type="hidden" name="_subject" value="Nova submissão do site">
+                
+                <button type="submit">Enviar Mensagem</button>
+            </form>
     </div>
+        <a href="https://made-center-taubate.webnode.page" class="botao-inferior"> ACESSE AQUI A MADE CENTER DE TAUBATÉ</a>
 
-    <!-- NOVO BOTÃO ADICIONADO AQUI -->
-    <a href="http://youtube.com/tvvalenarede" class="botao-inferior">MADE CENTER DE TAUBATÉ</a>
-
-    <script>
-        // Mantive igual o script original
+      <script>
         document.addEventListener('DOMContentLoaded', () => {
             const formulario = document.getElementById('meuFormulario');
 
@@ -288,86 +232,7 @@
                 }
             });
         });
-    </script>
-</body><html>
-<head>
-    <meta charset="UTF-8">
-    <title>TVVALENAREDE - Contato</title>
-    <style>
-        body {
-            background-color: #FFA500;
-            margin: 0;
-            padding: 20px 20px 100px 20px; /* Aumentei o padding inferior */
-            font-family: Arial, sans-serif;
-            display: flex;
-            gap: 20px;
-            position: relative;
-        }
-
-        /* ... (mantive todos os estilos existentes) ... */
-
-        /* NOVO BOTÃO INFERIOR */
-        .botao-inferior {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            background-color: #000000;
-            color: white;
-            padding: 20px;
-            text-align: center;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.2em;
-            z-index: 1000;
-            box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
-            transition: background-color 0.3s;
-        }
-
-        .botao-inferior:hover {
-            background-color: #333333;
-        }
-    </style>
-</head>
-<body>
-    
-    </div>
-
-        </form>
-    </div>
-
-    <!-- NOVO BOTÃO ADICIONADO AQUI -->
-    <a href="https://made-center-taubate.webnode.page" class="botao-inferior"> ACESSE AQUI A MADE CENTER DE TAUBATÉ</a>
-
-    <script>
-        // Mantive igual o script original
-        document.addEventListener('DOMContentLoaded', () => {
-            const formulario = document.getElementById('meuFormulario');
-
-            formulario.addEventListener('submit', (e) => {
-                e.preventDefault();
-
-                // Validação do e-mail
-                const email = formulario.email.value;
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Por favor, insira um e-mail válido!');
-                    return;
-                }
-
-                // Validação da mensagem
-                if (formulario.mensagem.value.trim().length < 10) {
-                    alert('A mensagem deve ter pelo menos 10 caracteres!');
-                    return;
-                }
-
-                // Confirmação de envio
-                if (confirm('Deseja realmente enviar a mensagem?')) {
-                    formulario.submit();
-                    alert('Mensagem enviada com sucesso!');
-                    formulario.reset();
-                }
-            });
-        });
-    </script>
+        </script>
+  </div>
 </body>
 </html>
