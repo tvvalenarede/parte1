@@ -46,8 +46,12 @@
             max-width: 1200px;
         }
 
-        /* Mantive os estilos originais abaixo */
+        /* Sidebars */
         .sidebar {
+            width: 250px;
+        }
+
+        .right-sidebar {
             width: 250px;
         }
 
@@ -64,8 +68,23 @@
             transition: background-color 0.3s;
         }
 
-        .botao-preto:hover {
-            background-color: #333;
+        .botao-branco {
+            display: block;
+            background-color: white;
+            color: black;
+            padding: 15px;
+            text-decoration: none;
+            margin-bottom: 10px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bold;
+            transition: all 0.3s;
+            border: 2px solid black;
+        }
+
+        .botao-branco:hover {
+            background-color: #f0f0f0;
+            transform: scale(1.05);
         }
 
         .main-content {
@@ -159,11 +178,11 @@
     <div class="top-container">
         <a href="https://made-center-taubate.webnode.page/produtos/" class="botao-superior">ACESSE A MADE CENTER E COMPRE ON LINE</a>
     </div>
-<div class="top-container">
+    <div class="top-container">
         <a href="https://tvvalenarede.webnode.page/?_gl=1*rj4ku6*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg" class="botao-superior">ACESSE O ADVOGADOS ASSOCIADOS J.E.C.S</a>
     </div>
 
-<div class="content-container">
+    <div class="content-container">
         <div class="sidebar">
             <a href="http://youtube.com/tvvalenarede" class="botao-preto">1 Futebol</a>
             <a href="http://youtube.com/tvvalenarede" class="botao-preto">2 Arquivos</a>
@@ -177,7 +196,7 @@
             <a href="http://youtube.com/tvvalenarede" class="botao-preto">10 Futebol Edição</a>
         </div>
 
-  <div class="main-content">
+        <div class="main-content">
             <div class="rede-social">
                 <h1 class="titulo-rede">REDE SOCIAL TVVALENAREDE</h1>
                 <div class="botoes-rede">
@@ -204,10 +223,23 @@
                 
                 <button type="submit">Enviar Mensagem</button>
             </form>
-    </div>
-        <a href="https://made-center-taubate.webnode.page" class="botao-inferior"> ACESSE AQUI A MADE CENTER DE TAUBATÉ</a>
+        </div>
 
-      <script>
+        <!-- Nova Sidebar Direita -->
+        <div class="right-sidebar">
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">1 ACESSE O FACEBOOK</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">2 ACESSE O FACEBOOK2</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">3 ACESSE O INSTAGRAM1</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">4 ACESSE O INSTAGRAM2</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">5 ACESSE O YOUTUBE</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">6 ACESSE O TIKTOK</a>
+            <a href="http://youtube.com/tvvalenarede" class="botao-branco">7 ACESSE O X</a>
+        </div>
+    </div>
+
+    <a href="https://made-center-taubate.webnode.page" class="botao-inferior"> ACESSE AQUI A MADE CENTER DE TAUBATÉ</a>
+
+    <script>
         document.addEventListener('DOMContentLoaded', () => {
             const formulario = document.getElementById('meuFormulario');
 
@@ -235,7 +267,6 @@
                 }
             });
         });
-        </script>
-  </div>
+    </script>
 </body>
 </html>
