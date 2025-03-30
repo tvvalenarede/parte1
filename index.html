@@ -9,6 +9,7 @@
             --primary: #2A3B47;
             --secondary: #B38E5D;
             --accent: #FF6B00;
+            --orange: #FF8C00;
         }
 
         * {
@@ -144,10 +145,27 @@
             text-decoration: none;
             box-shadow: 0 5px 15px rgba(0,0,0,0.3);
             transition: transform 0.3s;
+            z-index: 1000;
         }
 
-        .fixed-button:hover {
+        .fixed-button-left {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--orange);
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s;
+            z-index: 1000;
+        }
+
+        .fixed-button:hover,
+        .fixed-button-left:hover {
             transform: translateY(-3px);
+            filter: brightness(1.1);
         }
 
         @media (max-width: 768px) {
@@ -162,6 +180,13 @@
 
             .main-header h1 {
                 font-size: 1.8rem;
+            }
+
+            .fixed-button,
+            .fixed-button-left {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+                bottom: 10px;
             }
         }
     </style>
@@ -213,7 +238,9 @@
         </div>
     </div>
 
+    <!-- Botões Fixos -->
     <a href="https://made-center-taubate.webnode.page" class="fixed-button">ACESSE MADE CENTER</a>
+    <a href="SUA_URL_AQUI" class="fixed-button-left">J.E.C.S</a>
 
     <script>
         document.addEventListener('DOMContentLoaded', () => {
