@@ -1,34 +1,10 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-    <link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2A3B47">
-<link rel="apple-touch-icon" href="logocerto.png">
-<link rel="icon" type="image/png" href="logocerto.png">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TVVALENAREDE - REDE SOCIAL DO BRASIL</title>
-<link rel="icon" type="image/png" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png">
-    <link rel="shortcut icon" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" type="image/png">
-    <link rel="apple-touch-icon" href="logocerto.png">
-<link rel="icon" type="image/png" href="logocerto.png">
-    
-    <!-- Ícone do site -->
-    <link rel="icon" href="logo192.png" type="image/png">
-    <link rel="apple-touch-icon" href="logo192.png">
-    <meta name="theme-color" content="#ffffff">
-
-    <!-- Manifest para Progressive Web App -->
-    <link rel="manifest" href="manifest.json">
-
+    <title>J.E.C.S Advogados Associados</title>
     <style>
-        :root {
-            --primary: #2A3B47;
-            --secondary: #B38E5D;
-            --accent: #FF6B00;
-            --orange: #FF8C00;
-        }
-
         * {
             margin: 0;
             padding: 0;
@@ -36,259 +12,253 @@
             font-family: 'Segoe UI', system-ui;
         }
 
-        body {
-            background: #f9f9f9;
-            line-height: 1.6;
+        :root {
+            --primary: #2A3B47;
+            --secondary: #B38E5D;
         }
 
+        /* Cabeçalho Principal */
         .main-header {
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 2rem 1rem;
+            padding: 2.5rem 1rem;
             border-bottom: 3px solid var(--secondary);
         }
 
         .main-header h1 {
-            font-size: 2.2rem;
+            font-size: 2.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 2px;
+            margin: 0;
+            font-weight: bold;
         }
 
-        .grid-container {
-            display: grid;
-            grid-template-columns: 1fr 3fr 1fr;
-            gap: 2rem;
-            padding: 2rem;
-            max-width: 1400px;
-            margin: 0 auto;
+        body {
+            line-height: 1.6;
         }
 
-        .sidebar {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .nav-button {
-            display: block;
-            width: 100%;
+        .navbar {
+            background: var(--primary);
             padding: 1rem;
-            margin-bottom: 1rem;
-            background: var(--primary);
+            position: sticky;
+            top: 0;
+        }
+
+        .navbar ul {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .navbar a {
             color: white;
             text-decoration: none;
-            border-radius: 8px;
-            transition: transform 0.3s, box-shadow 0.3s;
+            text-transform: uppercase;
+            font-weight: 500;
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');
+            background-size: cover;
+            color: white;
             text-align: center;
+            padding: 8rem 1rem;
         }
 
-        .nav-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-            background: var(--secondary);
-        }
-
-        .main-content {
-            background: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-
-        .social-grid {
+        .services {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
         }
 
-        .social-card {
-            background: var(--primary);
-            color: white;
-            padding: 1.5rem;
-            border-radius: 10px;
-            text-align: center;
-            transition: transform 0.3s;
-        }
-
-        .social-card:hover {
-            transform: scale(1.05);
-            background: var(--secondary);
-        }
-
-        .contact-form {
-            background: var(--primary);
+        .service-card {
+            border: 1px solid #ddd;
             padding: 2rem;
             border-radius: 10px;
-            color: white;
+            cursor: pointer;
+            transition: transform 0.3s;
         }
 
-        .contact-form input,
-        .contact-form textarea {
+        .service-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--secondary);
+        }
+
+        .attorneys {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            padding: 4rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .attorney-card img {
             width: 100%;
-            padding: 0.8rem;
-            margin: 0.5rem 0;
-            border: 2px solid var(--secondary);
+            height: 300px;
+            object-fit: cover;
             border-radius: 5px;
-            background: rgba(255,255,255,0.9);
         }
 
-        .contact-form button {
+        .quiz-container {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            border: 1px solid #ddd;
+        }
+
+        .quiz-step {
+            display: none;
+        }
+
+        .quiz-step.active {
+            display: block;
+        }
+
+        .quiz-option {
+            padding: 1rem;
+            margin: 1rem 0;
+            border: 2px solid var(--primary);
+            cursor: pointer;
+        }
+
+        .contact {
+            background: var(--primary);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 0.5rem;
+            margin: 0.5rem 0;
+        }
+
+        button {
             background: var(--secondary);
             color: white;
-            padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
-            width: 100%;
-            font-size: 1.1rem;
+            padding: 1rem 2rem;
             cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .contact-form button:hover {
-            background: var(--accent);
-        }
-
-        .fixed-button {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background: var(--accent);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-            z-index: 1000;
-        }
-
-        .fixed-button-left {
-            position: fixed;
-            bottom: 20px;
-            left: 20px;
-            background: var(--orange);
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 30px;
-            text-decoration: none;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-            z-index: 1000;
-        }
-
-        .fixed-button:hover,
-        .fixed-button-left:hover {
-            transform: translateY(-3px);
-            filter: brightness(1.1);
         }
 
         @media (max-width: 768px) {
-            .grid-container {
-                grid-template-columns: 1fr;
-                padding: 1rem;
+            .navbar ul {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
             }
-
-            .sidebar {
-                order: -1;
-            }
-
+            
             .main-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .fixed-button,
-            .fixed-button-left {
-                padding: 0.8rem 1.5rem;
-                font-size: 0.9rem;
-                bottom: 10px;
+                font-size: 2rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Cabeçalho com o logo e título -->
     <header class="main-header">
-        <img src="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" alt="Logo">
-        <h1>TVVALENAREDE - Rede Social</h1>
+        <h1>J.E.C.S ADVOGADOS ASSOCIADOS</h1>
     </header>
-<link rel="icon" type="image/png" href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png">
 
-    <div class="grid-container">
-        <!-- Sidebar Esquerda -->
-        <div class="sidebar">
-            <a href="https://casa3-irmaos.webnode.page/?_gl=1*1c6qg4l*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjE1MzI2NjMxOTAuMTc0MzUzMDU1Mi4xNzQzNTMwNTUx" class="nav-button">CASA 3 IRMÃOS</a> href="https://github.com/tvvalenarede/bonani3/raw/main/logocerto2025.png" type="image/png">
-            <a href="https://www.youtube.com/watch?v=uP2KGb9CxkY&t=3473s" class="nav-button">FUTEBOL LIVE</a>
-            <a href="https://www.youtube.com/watch?v=KjxwzR0Gf5Q" class="nav-button">TVVALENAREDE1NOTÍCIAS</a>
-            <a href="https://www.youtube.com/watch?v=896YlUSRYdE" class="nav-button">TELETON ANIMADO</a>
-            <a href="https://www.youtube.com/watch?v=1zgB6ksHk0M" class="nav-button">JEQUITI ANIMADO</a>
-            <a href="https://www.youtube.com/watch?v=z2j0Yzf8Myk&t=34s" class="nav-button">PREMIAÇÃO ACEESP</a>
+    <nav class="navbar">
+        <ul>
+            <li><a href="#home">Início</a></li>
+            <li><a href="#services">Áreas de Atuação</a></li>
+            <li><a href="#attorneys">Advogados</a></li>
+            <li><a href="#quiz">Quiz Jurídico</a></li>
+            <li><a href="#contact">Contato</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="home">
+        <h1>Sua Justiça em Primeiro Lugar</h1>
+        <p>50 anos de experiência em soluções jurídicas personalizadas</p>
+    </section>
+
+    <section class="services" id="services">
+        <div class="service-card" onclick="startQuiz('trabalhista')">
+            <h3>Direito Trabalhista</h3>
+            <p>Reclamações trabalhistas, demissões, assédio</p>
         </div>
+        <div class="service-card" onclick="startQuiz('previdenciario')">
+            <h3>Direito Previdenciário</h3>
+            <p>Aposentadorias, revisões de benefícios</p>
+        </div>
+        <div class="service-card" onclick="startQuiz('familia')">
+            <h3>Direito de Família</h3>
+            <p>Divórcios, pensão alimentícia, guarda de filhos</p>
+        </div>
+    </section>
 
-        <!-- Conteúdo Principal -->
-        <div class="main-content">
-            <div class="social-grid">
-                <a href="https://made-center7.webnode.page" class="social-card">MADE CENTER</a>
-                <a href="https://www.facebook.com/groups/454428378011062?locale=pt_BR" class="social-card">GRUPO MADE CENTER</a>
-                <a href="https://bar-do-osmar-de-taubate-s-p.webnode.page/" class="social-card">BAR DO OSMAR</a>
-                <a href="http://www.youtube.com/tvvalenarede" class="social-card">CASA 3 IRMÃOS</a>
-                <a href="https://tvvalenarede.webnode.page/?_gl=1*1p8g9b5*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="social-card">ADVOGADOS ASSOCIADOS J.E.C.S</a>
-                <a href="https://serginhos-centro-automotivo-de-taubate.webnode.page/" class="social-card">SERGINHO PNEUS</a>
+    <section class="attorneys" id="attorneys">
+        <div class="attorney-card">
+            <img src="https://via.placeholder.com/300x400" alt="Dr. João Silva">
+            <h4>Dr. João Silva</h4>
+            <p>Especialista em Direito Trabalhista</p>
+        </div>
+        <!-- Repetir para outros 5 advogados -->
+    </section>
+
+    <section class="quiz-container" id="quiz">
+        <h2>Quiz Jurídico Inteligente</h2>
+        <div id="quiz-steps">
+            <div class="quiz-step" id="step-1">
+                <p>Você foi demitido nos últimos 6 meses?</p>
+                <div class="quiz-option" onclick="nextStep(1, 'sim')">Sim</div>
+                <div class="quiz-option" onclick="nextStep(1, 'não')">Não</div>
             </div>
-
-            <form class="contact-form" id="meuFormulario" action="https://formsubmit.co/tvrbrazil@gmail.com" method="POST">
-                <input type="text" id="nome" name="Nome" placeholder="Nome" required>
-                <input type="email" id="email" name="E-mail" placeholder="E-mail" required>
-                <textarea id="mensagem" name="Mensagem" rows="5" placeholder="Mensagem" required></textarea>
-                <input type="hidden" name="_subject" value="Nova mensagem do site">
-                <button type="submit">ENVIAR MENSAGEM</button>
-            </form>
+            <!-- Adicionar mais steps conforme necessário -->
         </div>
+        <div id="quiz-result"></div>
+    </section>
 
-        <!-- Sidebar Direita -->
-        <div class="sidebar">
-            <a href="https://www.facebook.com/?locale=pt_BR" class="nav-button">FACEBOOK</a>
-            <a href="https://www.facebook.com/tvvalenarede2" class="nav-button">FACEBOOK2</a>
-            <a href="https://www.instagram.com/tvvalenarede?igsh=aWF0bjdueGR5N3cw" class="nav-button">INSTAGRAM1</a>
-            <a href="https://www.instagram.com/tvvalenarede2/" class="nav-button">INSTAGRAM2</a>
-            <a href="http://youtube.com/tvvalenarede" class="nav-button">YOUTUBE</a>
-            <a href="https://www.tiktok.com/@tvvalenarede?_t=ZM-8uwnC2d12ZD&_r=1" class="nav-button">TIKTOK</a>
-        </div>
-    </div>
-
-    <!-- Botões Fixos -->
-    <a href="https://made-center-taubate.webnode.page/produtos/" class="fixed-button">ACESSE MADE CENTER</a>
-    <a href="https://tvvalenarede.webnode.page/?_gl=1*tgfs5g*_gcl_au*MTI0NjU5NzMzNS4xNzQxNzI2MjQ1LjkzMjUyOTk2Mi4xNzQyMzA0NTI5LjE3NDIzMDQ1Mjg." class="fixed-button-left">J.E.C.S</a>
+    <section class="contact" id="contact">
+        <h2>Agende uma Consulta</h2>
+        <form>
+            <input type="text" placeholder="Nome" required>
+            <input type="email" placeholder="E-mail" required>
+            <select>
+                <option>Direito Trabalhista</option>
+                <option>Direito Previdenciário</option>
+                <option>Direito de Família</option>
+            </select>
+            <textarea placeholder="Descreva brevemente seu caso"></textarea>
+            <button>Enviar</button>
+        </form>
+    </section>
 
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const formulario = document.getElementById('meuFormulario');
+        let currentStep = 0;
+        let answers = {};
 
-            formulario.addEventListener('submit', (e) => {
-                e.preventDefault();
+        function startQuiz(area) {
+            document.getElementById('quiz').scrollIntoView();
+            answers = { area: area };
+            showStep(0);
+        }
 
-                // Validação do e-mail
-                const email = formulario.email.value;
-                if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-                    alert('Por favor, insira um e-mail válido!');
-                    return;
-                }
+        function showStep(step) {
+            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
+            document.getElementById(`step-${step + 1}`).classList.add('active');
+        }
 
-                // Validação da mensagem
-                if (formulario.mensagem.value.trim().length < 10) {
-                    alert('A mensagem deve ter pelo menos 10 caracteres!');
-                    return;
-                }
+        function nextStep(step, answer) {
+            answers[`step${step}`] = answer;
+            // Lógica para próxima pergunta ou resultado final
+            showResult();
+        }
 
-                // Confirmação de envio
-                if (confirm('Deseja realmente enviar a mensagem?')) {
-                    formulario.submit();
-                    alert('Mensagem enviada com sucesso!');
-                    formulario.reset();
-                }
-            });
-        });
+        function showResult() {
+            const result = `<h3>Recomendação:</h3>
+                          <p>Com base nas suas respostas, recomendamos:</p>
+                          <p>Advogado Especialista: Dr. João Silva</p>
+                          <button>Agendar Consulta</button>`;
+            document.getElementById('quiz-result').innerHTML = result;
+        }
     </script>
 </body>
+</html>
