@@ -22,7 +22,7 @@
             background: var(--primary);
             color: white;
             text-align: center;
-            padding: 2.5rem 1rem;
+            padding: 2rem 1rem 1.5rem;
             border-bottom: 3px solid var(--secondary);
         }
 
@@ -30,8 +30,14 @@
             font-size: 2.8rem;
             text-transform: uppercase;
             letter-spacing: 2px;
-            margin: 0;
+            margin: 0 0 1rem 0;
             font-weight: bold;
+        }
+
+        .header-logo {
+            max-width: 300px;
+            margin: 0 auto;
+            display: block;
         }
 
         body {
@@ -156,12 +162,17 @@
             .main-header h1 {
                 font-size: 2rem;
             }
+
+            .header-logo {
+                max-width: 200px;
+            }
         }
     </style>
 </head>
 <body>
     <header class="main-header">
         <h1>J.E.C.S ADVOGADOS ASSOCIADOS</h1>
+        <img src="C:\Users\André Luiz Bonani\Pictures\fotologotipo1.png" alt="Logo JECS Advogados" class="header-logo">
     </header>
 
     <nav class="navbar">
@@ -200,7 +211,7 @@
             <h4>Dr. João Silva</h4>
             <p>Especialista em Direito Trabalhista</p>
         </div>
-        <!-- Repetir para outros 5 advogados -->
+        <!-- Adicione mais 5 cards de advogados aqui -->
     </section>
 
     <section class="quiz-container" id="quiz">
@@ -211,7 +222,7 @@
                 <div class="quiz-option" onclick="nextStep(1, 'sim')">Sim</div>
                 <div class="quiz-option" onclick="nextStep(1, 'não')">Não</div>
             </div>
-            <!-- Adicionar mais steps conforme necessário -->
+            <!-- Adicione mais steps conforme necessário -->
         </div>
         <div id="quiz-result"></div>
     </section>
@@ -248,7 +259,7 @@
 
         function nextStep(step, answer) {
             answers[`step${step}`] = answer;
-            // Lógica para próxima pergunta ou resultado final
+            // Adicione aqui a lógica para próxima pergunta ou resultado final
             showResult();
         }
 
