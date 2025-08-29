@@ -1,3 +1,428 @@
+
+
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>TVVALENAREDE</title>
+    <meta name="description" content="Escritórios dos Advogados Associados do Vale do Paraíba, sediada na cidade de Taubaté S.P, com vários Advogados atuando nas áreas de Direito de Trabalho, Direito Previdenciário e Direito Civil">
+    <meta property="og:title" content="TVVALENAREDE">
+    <meta property="og:description" content="Escritórios dos Advogados Associados do Vale do Paraíba">
+    <meta property="og:image" content="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000024-76fc976fcc/700/logo%20advogado.fw.png?ph=c1283f1f9d">
+    <meta property="og:url" content="https://tvvalenarede.webnode.page/">
+    <link rel="icon" href="https://duyn491kcolsw.cloudfront.net/files/1j/1j3/1j3767.ico?ph=c1283f1f9d">
+    <style>
+        /* Reset e estilos básicos */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header e Navegação */
+        header {
+            background-color: #F4F7F9;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-menu li {
+            margin-left: 20px;
+        }
+        
+        .nav-menu a {
+            text-decoration: none;
+            color: #2c3e50;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        .nav-menu a:hover {
+            color: #3498db;
+        }
+        
+        .menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+        }
+        
+        .menu-toggle span {
+            width: 25px;
+            height: 3px;
+            background-color: #2c3e50;
+            margin: 2px 0;
+            transition: all 0.3s;
+        }
+        
+        /* Seção Hero */
+        .hero {
+            position: relative;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000020-ef5b1ef5b4/foto%20deusa.fw.png?ph=c1283f1f9d');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            padding: 20px;
+        }
+        
+        .hero-logo {
+            max-width: 300px;
+            margin: 0 auto 30px;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: background-color 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        /* Seções gerais */
+        section {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            font-size: 2rem;
+            color: #2c3e50;
+        }
+        
+        /* Serviços */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-item {
+            text-align: center;
+            padding: 30px 20px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        /* Sobre nós */
+        .about {
+            background-color: #F4F7F9;
+        }
+        
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+        
+        .about-image {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .about-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        /* Contato */
+        .contact {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://duyn491kcolsw.cloudfront.net/files/3v/3vq/3vq0qg.jpg?ph=c1283f1f9d');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+        }
+        
+        .contact-info {
+            margin-bottom: 30px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            margin: 20px 0;
+        }
+        
+        .social-links a {
+            color: white;
+            margin: 0 10px;
+            font-size: 1.2rem;
+        }
+        
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                flex-direction: column;
+                background-color: #F4F7F9;
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
+                padding: 20px 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-menu li {
+                margin: 15px 0;
+            }
+            
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">REDES SOCIAIS J.E.C.S</div>
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#servicos">Serviços</a></li>
+                <li><a href="#sobre">Sobre nós</a></li>
+                <li><a href="#contato">Entre em contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="inicio">
+        <div class="container hero-content">
+            <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000024-76fc976fcc/logo%20advogado.fw.png?ph=c1283f1f9d" alt="Logo Advogados Associados" class="hero-logo">
+            <h1>Escritórios dos Advogados Associados do Vale do Paraíba</h1>
+            <p>Sediada na cidade de Taubaté S.P, com vários Advogados atuando nas áreas de Direito de Trabalho, Direito Previdenciário e Direito Civil, Edifício Office praça Dom Epaminondas</p>
+            <a href="#contato" class="btn">Entre em contato</a>
+        </div>
+    </section>
+
+    <!-- Contato Rápido -->
+    <section class="container">
+        <h2 class="section-title">Contato Rápido</h2>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <p>Clicar no número do telefone abaixo para entrar no WhatsApp dos Advogados Associados J.E.C.S</p>
+            <a href="https://wa.me/5512981387597" class="btn" target="_blank" rel="nofollow">wa.me/5512981387597</a>
+        </div>
+        <div style="text-align: center; margin-bottom: 30px;">
+            <a href="https://www.instagram.com/jecs_advocacia/" class="btn" target="_blank" rel="nofollow">www.instagram.com/jecs_advocacia/</a>
+            <p>Clicar no link acima para entrar no INSTAGRAM dos ADVOGADOS ASSOCIADOS Dr José Eduardo Costa de Souza</p>
+        </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="container">
+        <h2 class="section-title">Localização</h2>
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.244035466503!2d-45.5597493243552!3d-23.41741605634927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd5885e56d38cb%3A0x91c2d6a9e9de6a02!2sPra%C3%A7a%20Dom%20Epaminondas%2C%20Taubat%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1648732630304!5m2!1spt-BR!2sbr" width="100%" height="100%" style="position: absolute; top: 0; left: 0; border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+        <p style="text-align: center; margin-top: 20px;">Entrar no mapa Google acima que o levará direto para o Escritório dos ADVOGADOS ASSOCIADOS J.E.C.S.</p>
+    </section>
+
+    <!-- Serviços -->
+    <section id="servicos">
+        <div class="container">
+            <h2 class="section-title">Nossos Serviços</h2>
+            <div class="services-grid">
+                <div class="service-item">
+                    <div class="service-icon">⚖️</div>
+                    <h3>Direito Previdenciário</h3>
+                    <p>Resumindo o direito previdenciário, é o conjunto de normas que regulam os direitos relacionados à previdência social, ou seja, o sistema de proteção social que garante benefícios aos trabalhadores e seus dependentes.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">📋</div>
+                    <h3>Consultoria Jurídica</h3>
+                    <p>Consultoria jurídica é um serviço oferecido por profissionais do direito que consiste em fornecer orientação e aconselhamento sobre questões legais a indivíduos, empresas ou organizações.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Direito da família</h3>
+                    <p>O direito de família é um ramo do direito que trata das relações familiares e dos direitos e deveres dos indivíduos dentro dessas relações.</p>
+                </div>
+                <div class="service-item">
+                    <div class="service-icon">💼</div>
+                    <h3>Direito Trabalhista</h3>
+                    <p>O Direito Trabalhista é um ramo do direito que regula as relações entre empregadores e empregados, protegendo os direitos e garantias dos trabalhadores.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sobre Nós -->
+    <section id="sobre" class="about">
+        <div class="container">
+            <h2 class="section-title">Sobre Nós</h2>
+            <div class="about-content">
+                <div>
+                    <h3>Dr José Alves de Souza</h3>
+                    <p>Em 05 de agosto de 1942 nascia na cidade de Paraibuna, José Alves de Souza, mas em 1965 fez de Taubaté seu novo lar. Em 1969 deu seus primeiros passos na área que realmente amava, iniciando seus estudos no Departamento de Ciências Jurídicas da Universidade de Taubaté. Já em 1974 fundou seu escritório, entregando muito trabalho e dedicação para seu crescimento e posteriormente ao dos integrantes que vieram a formar sua equipe.</p>
+                    <p>Anos depois, uma nova geração da família de Souza se junta à história de dedicação e sucesso, com José Eduardo Costa de Souza, filho de José Alves, ao se formar também pela Universidade de Taubaté em 1998, auxiliando seu pai desde cedo.</p>
+                </div>
+                <div class="about-image">
+                    <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000004-b841db841f/dr%20jos%C3%A9%20alves.png?ph=c1283f1f9d" alt="Dr José Alves de Souza">
+                </div>
+            </div>
+            
+            <div style="margin-top: 50px;">
+                <h3 style="text-align: center; margin-bottom: 30px;">José Eduardo Costa de Souza: Advogado Trabalhista</h3>
+                <div class="about-content">
+                    <div class="about-image">
+                        <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000036-14a8d14a90/foto%20nova%20eduardo%20usar.jpeg?ph=c1283f1f9d" alt="José Eduardo Costa de Souza">
+                    </div>
+                    <div>
+                        <p>Dr José Eduardo de Costa de Souza nasceu e cresceu na acolhedora cidade de Pindamonhangaba, no interior de São Paulo. Desde jovem, incentivado pelo seu pai o Dr José Alves de Souza demonstrou uma forte inclinação para defender os direitos dos outros e uma paixão pela justiça.</p>
+                        <p>Após concluir o ensino médio com excelência, José Eduardo ingressou na Universidade de Taubaté (UNITAU), onde se dedicou arduamente aos estudos de Direito. Durante sua graduação, ele se destacou não apenas por seu desempenho acadêmico exemplar, mas também por seu compromisso em ajudar seus colegas e comunidade.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contate-nos</h2>
+            <div class="contact-info">
+                <p><strong>Visite-nos</strong></p>
+                <p>Praça Dom Epaminondas, cidade de Taubaté S.P no Edificio Óffice</p>
+                <p><strong>Entre em contato conosco</strong></p>
+                <p>12 98138 7597</p>
+                <p><strong>E-mail</strong></p>
+                <p>DrJoseeduardocostadesouza@gmail.com</p>
+            </div>
+            <a href="https://wa.me/5512981387597" class="btn" target="_blank" rel="nofollow">Entre em contato via WhatsApp</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container footer-content">
+            <p>REDES SOCIAIS J.E.C.S - Advogados Associados</p>
+            <div class="social-links">
+                <a href="https://www.instagram.com/jecs_advocacia/" target="_blank" rel="nofollow">Instagram</a>
+                <a href="https://wa.me/5512981387597" target="_blank" rel="nofollow">WhatsApp</a>
+            </div>
+            <p>© 2025 Todos os direitos reservados para a mídia TVVALENAREDE</p>
+        </div>
+    </footer>
+
+    <script>
+        // Menu mobile toggle
+        document.getElementById('mobile-menu').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+        });
+        
+        // Fechar menu ao clicar em um link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.querySelector('.nav-menu').classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -170,11 +595,16 @@
     </style>
 </head>
 <body>
-    <header class="main-header">
-        <h1>J.E.C.S ADVOGADOS ASSOCIADOS</h1>
-        <img src="https://github.com/tvvalenarede/parte1/raw/main/fotologotipo1.png">
-    </header>
-
+    <!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Foto Advogadas</title>
+</head>
+<body>
+    <img src="https://github.com/tvvalenarede/tv1/raw/main/fotosadvogadas.png" alt="Foto das Advogadas" style="max-width: 100%; height: auto;">
+</body>
+</html>
     <nav class="navbar">
         <ul>
             <li><a href="#home">Início</a></li>
@@ -272,4 +702,7 @@
         }
     </script>
 </body>
+</html>
+
+
 </html>
