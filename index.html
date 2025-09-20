@@ -1,17 +1,3 @@
-<!-- Vídeo no topo do site -->
-    <div class="top-video-container">
-        <video class="top-video" controls width="640" height="360">
-            <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/advogadovideo1.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-        <div class="video-controls">
-            <button class="video-btn" onclick="playVideo()"><i class="fas fa-play"></i> Reproduzir</button>
-            <button class="video-btn" onclick="pauseVideo()"><i class="fas fa-pause"></i> Pausar</button>
-        </div>
-    </div>
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -24,6 +10,7 @@
     <meta property="og:image" content="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000024-76fc976fcc/700/logo%20advogado.fw.png?ph=c1283f1f9d">
     <meta property="og:url" content="https://tvvalenarede.webnode.page/">
     <link rel="icon" href="https://duyn491kcolsw.cloudfront.net/files/1j/1j3/1j3767.ico?ph=c1283f1f9d">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         /* Reset e estilos básicos */
         * {
@@ -36,6 +23,7 @@
         body {
             color: #333;
             line-height: 1.6;
+            padding-top: 0; /* Removemos o padding para o vídeo ficar no topo */
         }
         
         .container {
@@ -43,6 +31,72 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
+        }
+        
+        /* Vídeo Centralizado */
+        .main-video-container {
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 30px;
+        }
+        
+        .main-video {
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            outline: none;
+        }
+        
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 10;
+            transition: opacity 0.5s ease;
+        }
+        
+        .video-overlay.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .play-button {
+            font-size: 5rem;
+            color: white;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        .play-button:hover {
+            transform: scale(1.1);
+        }
+        
+        .sound-control {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            z-index: 11;
         }
         
         /* Header e Navegação */
@@ -278,10 +332,34 @@
             .hero h1 {
                 font-size: 2rem;
             }
+            
+            .play-button {
+                font-size: 3rem;
+            }
+            
+            .main-video {
+                height: auto;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Vídeo Principal Centralizado -->
+    <div class="main-video-container">
+        <video class="main-video" id="mainVideo" width="100%" playsinline muted autoplay loop>
+            <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/advogadovideo1.mp4" type="video/mp4">
+            Seu navegador não suporta o elemento de vídeo.
+        </video>
+        <div class="video-overlay" id="videoOverlay">
+            <div class="play-button" id="playButton">
+                <i class="fas fa-play"></i>
+            </div>
+        </div>
+        <button class="sound-control" id="soundControl">
+            <i class="fas fa-volume-mute"></i>
+        </button>
+    </div>
+
     <!-- Header -->
     <header>
         <div class="container header-content">
@@ -369,7 +447,7 @@
                 <div>
                     <h3>Dr José Alves de Souza</h3>
                     <p>Em 05 de agosto de 1942 nascia na cidade de Paraibuna, José Alves de Souza, mas em 1965 fez de Taubaté seu novo lar. Em 1969 deu seus primeiros passos na área que realmente amava, iniciando seus estudos no Departamento de Ciências Jurídicas da Universidade de Taubaté. Já em 1974 fundou seu escritório, entregando muito trabalho e dedicação para seu crescimento e posteriormente ao dos integrantes que vieram a formar sua equipe.</p>
-                    <p>Anos depois, uma nova geração da família de Souza se junta à história de dedicação e sucesso, com José Eduardo Costa de Souza, filho de José Alves, ao se formar também pela Universidade de Taubaté em 1998, auxiliando seu pai desde cedo.</p>
+                    <p>Anos depois, uma nova geração da família de Souza se junta à história de dedicação e sucesso, com José Eduardo Costa de Souza, filho de José Alves, ao se formar também pela Universidade de Taubaté em 1998, auxiliando seu padre desde cedo.</p>
                 </div>
                 <div class="about-image">
                     <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000004-b841db841f/dr%20jos%C3%A9%20alves.png?ph=c1283f1f9d" alt="Dr José Alves de Souza">
@@ -420,6 +498,46 @@
     </footer>
 
     <script>
+        // Controle do vídeo principal
+        const mainVideo = document.getElementById('mainVideo');
+        const videoOverlay = document.getElementById('videoOverlay');
+        const playButton = document.getElementById('playButton');
+        const soundControl = document.getElementById('soundControl');
+        
+        // Iniciar vídeo automaticamente (já configurado no HTML)
+        // Mas garantir que funcione em todos os navegadores
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tenta reproduzir o vídeo programaticamente
+            const playPromise = mainVideo.play();
+            
+            if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                    // A reprodução automática falhou, mostrar o botão de play
+                    videoOverlay.classList.remove('hidden');
+                });
+            }
+        });
+        
+        // Controle do botão de play
+        playButton.addEventListener('click', function() {
+            mainVideo.play();
+            videoOverlay.classList.add('hidden');
+        });
+        
+        // Controle de som
+        let isMuted = true;
+        
+        soundControl.addEventListener('click', function() {
+            isMuted = !isMuted;
+            mainVideo.muted = isMuted;
+            
+            if (isMuted) {
+                soundControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
+            } else {
+                soundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
+            }
+        });
+        
         // Menu mobile toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
@@ -433,287 +551,4 @@
         });
     </script>
 </body>
-
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>J.E.C.S Advogados Associados</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', system-ui;
-        }
-
-        :root {
-            --primary: #2A3B47;
-            --secondary: #B38E5D;
-        }
-
-        /* Cabeçalho Principal */
-        .main-header {
-            background: var(--primary);
-            color: white;
-            text-align: center;
-            padding: 2rem 1rem 1.5rem;
-            border-bottom: 3px solid var(--secondary);
-        }
-
-        .main-header h1 {
-            font-size: 2.8rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin: 0 0 1rem 0;
-            font-weight: bold;
-        }
-
-        .header-logo {
-            max-width: 300px;
-            margin: 0 auto;
-            display: block;
-        }
-
-        body {
-            line-height: 1.6;
-        }
-
-        .navbar {
-            background: var(--primary);
-            padding: 1rem;
-            position: sticky;
-            top: 0;
-        }
-
-        .navbar ul {
-            display: flex;
-            justify-content: center;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .navbar a {
-            color: white;
-            text-decoration: none;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .hero {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
-                        url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f');
-            background-size: cover;
-            color: white;
-            text-align: center;
-            padding: 8rem 1rem;
-        }
-
-        .services {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-        }
-
-        .service-card {
-            border: 1px solid #ddd;
-            padding: 2rem;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: transform 0.3s;
-        }
-
-        .service-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--secondary);
-        }
-
-        .attorneys {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            background: #f9f9f9;
-        }
-
-        .attorney-card img {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            border-radius: 5px;
-        }
-
-        .quiz-container {
-            max-width: 800px;
-            margin: 4rem auto;
-            padding: 2rem;
-            border: 1px solid #ddd;
-        }
-
-        .quiz-step {
-            display: none;
-        }
-
-        .quiz-step.active {
-            display: block;
-        }
-
-        .quiz-option {
-            padding: 1rem;
-            margin: 1rem 0;
-            border: 2px solid var(--primary);
-            cursor: pointer;
-        }
-
-        .contact {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        input, textarea {
-            width: 100%;
-            padding: 0.5rem;
-            margin: 0.5rem 0;
-        }
-
-        button {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 1rem 2rem;
-            cursor: pointer;
-        }
-
-        @media (max-width: 768px) {
-            .navbar ul {
-                flex-direction: column;
-                text-align: center;
-                gap: 1rem;
-            }
-            
-            .main-header h1 {
-                font-size: 2rem;
-            }
-
-            .header-logo {
-                max-width: 200px;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <title>Foto Advogadas</title>
-</head>
-<body>
-    <img src="https://github.com/tvvalenarede/tv1/raw/main/fotosadvogadas.png" alt="Foto das Advogadas" style="max-width: 100%; height: auto;">
-</body>
-</html>
-    <nav class="navbar">
-        <ul>
-            <li><a href="#home">Início</a></li>
-            <li><a href="#services">Áreas de Atuação</a></li>
-            <li><a href="#attorneys">Advogados</a></li>
-            <li><a href="#quiz">Quiz Jurídico</a></li>
-            <li><a href="#contact">Contato</a></li>
-        </ul>
-    </nav>
-
-    <section class="hero" id="home">
-        <h1>Sua Justiça em Primeiro Lugar</h1>
-        <p>50 anos de experiência em soluções jurídicas personalizadas</p>
-    </section>
-
-    <section class="services" id="services">
-        <div class="service-card" onclick="startQuiz('trabalhista')">
-            <h3>Direito Trabalhista</h3>
-            <p>Reclamações trabalhistas, demissões, assédio</p>
-        </div>
-        <div class="service-card" onclick="startQuiz('previdenciario')">
-            <h3>Direito Previdenciário</h3>
-            <p>Aposentadorias, revisões de benefícios</p>
-        </div>
-        <div class="service-card" onclick="startQuiz('familia')">
-            <h3>Direito de Família</h3>
-            <p>Divórcios, pensão alimentícia, guarda de filhos</p>
-        </div>
-    </section>
-
-    <section class="attorneys" id="attorneys">
-        <div class="attorney-card">
-            <img src="https://via.placeholder.com/300x400" alt="Dr. José Eduardo Costa de Souza">
-            <h4>Dr. José Eduardo</h4>
-            <p>Especialista em Direito de Trabalho, Direito de Família e Direito Previdenciário </p>
-        </div>
-        <!-- Adicione mais 5 cards de advogados aqui -->
-    </section>
-
-    <section class="quiz-container" id="quiz">
-        <h2>Quiz Jurídico Inteligente</h2>
-        <div id="quiz-steps">
-            <div class="quiz-step" id="step-1">
-                <p>Você foi demitido nos últimos 6 meses?</p>
-                <div class="quiz-option" onclick="nextStep(1, 'sim')">Sim</div>
-                <div class="quiz-option" onclick="nextStep(1, 'não')">Não</div>
-            </div>
-            <!-- Adicione mais steps conforme necessário -->
-        </div>
-        <div id="quiz-result"></div>
-    </section>
-
-    <section class="contact" id="contact">
-        <h2>Agende uma Consulta</h2>
-        <form>
-            <input type="text" placeholder="Nome" required>
-            <input type="email" placeholder="E-mail" required>
-            <select>
-                <option>Direito Trabalhista</option>
-                <option>Direito Previdenciário</option>
-                <option>Direito de Família</option>
-            </select>
-            <textarea placeholder="Descreva brevemente seu caso"></textarea>
-            <button>Enviar</button>
-        </form>
-    </section>
-
-    <script>
-        let currentStep = 0;
-        let answers = {};
-
-        function startQuiz(area) {
-            document.getElementById('quiz').scrollIntoView();
-            answers = { area: area };
-            showStep(0);
-        }
-
-        function showStep(step) {
-            document.querySelectorAll('.quiz-step').forEach(el => el.classList.remove('active'));
-            document.getElementById(`step-${step + 1}`).classList.add('active');
-        }
-
-        function nextStep(step, answer) {
-            answers[`step${step}`] = answer;
-            // Adicione aqui a lógica para próxima pergunta ou resultado final
-            showResult();
-        }
-
-        function showResult() {
-            const result = `<h3>Recomendação:</h3>
-                          <p>Com base nas suas respostas, recomendamos:</p>
-                          <p>Advogado Especialista: Dr. José Eduardo</p>
-                          <button>Agendar Consulta</button>`;
-            document.getElementById('quiz-result').innerHTML = result;
-        }
-    </script>
-</body>
-</html>
-
-
 </html>
