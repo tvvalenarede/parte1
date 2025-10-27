@@ -1,18 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>TVVALENAREDE</title>
-    <meta name="description" content="Escritórios dos Advogados Associados do Vale do Paraíba, sediada na cidade de Taubaté S.P, com vários Advogados atuando nas áreas de Direito de Trabalho, Direito Previdenciário e Direito Civil">
-    <meta property="og:title" content="TVVALENAREDE">
-    <meta property="og:description" content="Escritórios dos Advogados Associados do Vale do Paraíba">
-    <meta property="og:image" content="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000024-76fc976fcc/700/logo%20advogado.fw.png?ph=c1283f1f9d">
-    <meta property="og:url" content="https://tvvalenarede.webnode.page/">
-    <link rel="icon" href="https://duyn491kcolsw.cloudfront.net/files/1j/1j3/1j3767.ico?ph=c1283f1f9d">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delegado Olim - Marketing Digital no Vale do Paraíba</title>
     <style>
-        /* Reset e estilos básicos */
+        /* Reset e estilos base */
         * {
             margin: 0;
             padding: 0;
@@ -20,535 +13,798 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         
+        :root {
+            --primary: #1a365d;
+            --secondary: #2d3748;
+            --accent: #e53e3e;
+            --light: #f7fafc;
+            --dark: #2d3748;
+            --gray: #718096;
+        }
+        
         body {
-            color: #333;
+            background-color: var(--light);
+            color: var(--dark);
             line-height: 1.6;
-            padding-top: 0; /* Removemos o padding para o vídeo ficar no topo */
+            overflow-x: hidden;
         }
         
         .container {
-            width: 100%;
+            width: 90%;
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 15px;
         }
         
-        /* Vídeo Centralizado */
-        .main-video-container {
+        section {
+            padding: 80px 0;
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+        }
+        
+        h2 {
+            font-size: 2rem;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--accent);
+        }
+        
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: #c53030;
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        /* Efeito de Estrelas */
+        #stars-container {
+            position: fixed;
+            top: 0;
+            left: 0;
             width: 100%;
+            height: 100vh;
+            z-index: -1;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            background-color: white;
+            border-radius: 50%;
+            animation: twinkle linear infinite;
+        }
+        
+        @keyframes twinkle {
+            0% {
+                opacity: 0.2;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0.2;
+            }
+        }
+        
+        /* Header */
+        header {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(5px);
+        }
+        
+        .header-container {
             display: flex;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
-            background-color: #000;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--accent);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: var(--accent);
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section - MELHORIAS NA IMAGEM */
+        .hero {
+            background: linear-gradient(rgba(26, 54, 93, 0.7), rgba(26, 54, 93, 0.85)), url('OLIMUSAR.jpg') center/cover no-repeat;
+            color: white;
+            text-align: center;
+            padding: 180px 0 100px;
+            margin-top: 70px;
             position: relative;
             overflow: hidden;
-            margin-bottom: 30px;
         }
         
-        .main-video {
-            width: 100%;
-            max-width: 1000px;
-            height: auto;
-            outline: none;
-        }
-        
-        .video-overlay {
+        /* Adicionando filtro para melhorar a nitidez da imagem */
+        .hero::before {
+            content: '';
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            transition: opacity 0.5s ease;
+            background: rgba(0, 0, 0, 0.1);
+            z-index: 0;
         }
         
-        .video-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .play-button {
-            font-size: 5rem;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.1);
-        }
-        
-        .sound-control {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 11;
-        }
-        
-        /* Header e Navegação */
-        header {
-            background-color: #F4F7F9;
-            padding: 15px 0;
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .header-content {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-size: 24px;
-            font-weight: bold;
-            color: #2c3e50;
-        }
-        
-        .nav-menu {
-            display: flex;
-            list-style: none;
-        }
-        
-        .nav-menu li {
-            margin-left: 20px;
-        }
-        
-        .nav-menu a {
-            text-decoration: none;
-            color: #2c3e50;
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-        
-        .nav-menu a:hover {
-            color: #3498db;
-        }
-        
-        .menu-toggle {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-        
-        .menu-toggle span {
-            width: 25px;
-            height: 3px;
-            background-color: #2c3e50;
-            margin: 2px 0;
-            transition: all 0.3s;
-        }
-        
-        /* Seção Hero */
-        .hero {
+        .hero .container {
             position: relative;
-            height: 80vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-align: center;
-            color: white;
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000020-ef5b1ef5b4/foto%20deusa.fw.png?ph=c1283f1f9d');
-            background-size: cover;
-            background-position: center;
-        }
-        
-        .hero-content {
-            max-width: 800px;
-            padding: 20px;
-        }
-        
-        .hero-logo {
-            max-width: 300px;
-            margin: 0 auto 30px;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             margin-bottom: 20px;
-        }
-        
-        .btn {
-            display: inline-block;
-            background-color: #3498db;
             color: white;
-            padding: 12px 30px;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 20px;
-            transition: background-color 0.3s;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
         }
         
-        .btn:hover {
-            background-color: #2980b9;
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
         }
         
-        /* Seções gerais */
-        section {
-            padding: 60px 0;
+        /* Sobre Section */
+        .sobre {
+            background-color: white;
         }
         
-        .section-title {
-            text-align: center;
-            margin-bottom: 40px;
-            font-size: 2rem;
-            color: #2c3e50;
-        }
-        
-        /* Serviços */
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-        }
-        
-        .service-item {
-            text-align: center;
-            padding: 30px 20px;
-            border-radius: 8px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s;
-        }
-        
-        .service-item:hover {
-            transform: translateY(-10px);
-        }
-        
-        .service-icon {
-            font-size: 40px;
-            margin-bottom: 20px;
-            color: #3498db;
-        }
-        
-        /* Sobre nós */
-        .about {
-            background-color: #F4F7F9;
-        }
-        
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+        .sobre-container {
+            display: flex;
             align-items: center;
+            gap: 50px;
         }
         
-        .about-image {
-            border-radius: 8px;
+        .sobre-img {
+            flex: 1;
+            border-radius: 10px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
         }
         
-        .about-image img {
+        .sobre-img img {
             width: 100%;
             height: auto;
             display: block;
+            transition: transform 0.5s ease;
+            filter: brightness(1.05); /* Melhorando a nitidez da imagem */
         }
         
-        /* Contato */
-        .contact {
-            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://duyn491kcolsw.cloudfront.net/files/3v/3vq/3vq0qg.jpg?ph=c1283f1f9d');
-            background-size: cover;
-            background-position: center;
-            color: white;
-            text-align: center;
+        .sobre-img img:hover {
+            transform: scale(1.03);
         }
         
-        .contact-info {
+        .sobre-content {
+            flex: 1;
+        }
+        
+        .sobre-content h2 {
+            text-align: left;
+        }
+        
+        .sobre-content h2:after {
+            left: 0;
+            transform: none;
+        }
+        
+        /* Vídeos Section */
+        .videos {
+            background-color: #f8f9fa;
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .video-item {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s;
+        }
+        
+        .video-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .video-thumb {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-thumb iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        
+        .video-info {
+            padding: 20px;
+        }
+        
+        .video-info h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Contato Section */
+        .contato {
+            background-color: white;
+        }
+        
+        .contato-container {
+            display: flex;
+            gap: 50px;
+        }
+        
+        .contato-info {
+            flex: 1;
+        }
+        
+        .contato-form {
+            flex: 1;
+        }
+        
+        .info-item {
+            display: flex;
+            align-items: flex-start;
             margin-bottom: 30px;
+        }
+        
+        .info-icon {
+            background-color: var(--primary);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .info-content h3 {
+            margin-bottom: 5px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+        
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
         }
         
         /* Footer */
         footer {
-            background-color: #2c3e50;
+            background-color: var(--primary);
             color: white;
-            padding: 40px 0 20px;
-            text-align: center;
+            padding: 60px 0 30px;
         }
         
-        .footer-content {
+        .footer-container {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+        
+        .footer-col {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-col h3 {
+            color: white;
+            margin-bottom: 25px;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-col h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent);
+        }
+        
+        .footer-col p, .footer-col a {
+            color: #cbd5e0;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-col a:hover {
+            color: white;
         }
         
         .social-links {
-            margin: 20px 0;
+            display: flex;
+            gap: 15px;
+            margin-top: 20px;
         }
         
         .social-links a {
-            color: white;
-            margin: 0 10px;
-            font-size: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: all 0.3s;
+        }
+        
+        .social-links a:hover {
+            background-color: var(--accent);
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 50px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #a0aec0;
         }
         
         /* Responsividade */
+        @media (max-width: 992px) {
+            .sobre-container, .contato-container {
+                flex-direction: column;
+            }
+            
+            .sobre-content h2 {
+                text-align: center;
+            }
+            
+            .sobre-content h2:after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+        }
+        
         @media (max-width: 768px) {
-            .menu-toggle {
+            nav ul {
+                display: none;
+                position: absolute;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background-color: white;
+                flex-direction: column;
+                padding: 20px;
+                box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+            }
+            
+            nav ul.active {
                 display: flex;
             }
             
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                flex-direction: column;
-                background-color: #F4F7F9;
-                width: 100%;
-                text-align: center;
-                transition: 0.3s;
-                box-shadow: 0 10px 15px rgba(0,0,0,0.1);
-                padding: 20px 0;
+            nav ul li {
+                margin: 10px 0;
             }
             
-            .nav-menu.active {
-                left: 0;
-            }
-            
-            .nav-menu li {
-                margin: 15px 0;
-            }
-            
-            .about-content {
-                grid-template-columns: 1fr;
+            .mobile-menu {
+                display: block;
             }
             
             .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            h1 {
                 font-size: 2rem;
             }
             
-            .play-button {
-                font-size: 3rem;
+            h2 {
+                font-size: 1.7rem;
             }
-            
-            .main-video {
-                height: auto;
+        }
+        
+        /* Melhorias específicas para a imagem do herói */
+        @media (min-width: 1200px) {
+            .hero {
+                background-attachment: fixed; /* Efeito parallax para melhor visualização */
             }
         }
     </style>
 </head>
 <body>
-    <!-- Vídeo Principal Centralizado -->
-    <div class="main-video-container">
-        <video class="main-video" id="mainVideo" width="100%" playsinline muted autoplay loop>
-            <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/JECS COM BR 360.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-        <div class="video-overlay" id="videoOverlay">
-            <div class="play-button" id="playButton">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-        <button class="sound-control" id="soundControl">
-            <i class="fas fa-volume-mute"></i>
-        </button>
-    </div>
-
+    <!-- Efeito de Estrelas -->
+    <div id="stars-container"></div>
+    
     <!-- Header -->
     <header>
-        <div class="container header-content">
-            <div class="logo">REDES SOCIAIS J.E.C.S</div>
-            <div class="menu-toggle" id="mobile-menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#servicos">Serviços</a></li>
-                <li><a href="#sobre">Sobre nós</a></li>
-                <li><a href="#contato">Entre em contato</a></li>
-            </ul>
+        <div class="container header-container">
+            <div class="logo">Delegado<span>Olim</span></div>
+            <div class="mobile-menu">☰</div>
+            <nav>
+                <ul>
+                    <li><a href="#home">Início</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#videos">Vídeos</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-    <section class="hero" id="inicio">
-        <div class="container hero-content">
-            <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000024-76fc976fcc/logo%20advogado.fw.png?ph=c1283f1f9d" alt="Logo Advogados Associados" class="hero-logo">
-            <h1>Escritórios dos Advogados Associados do Vale do Paraíba</h1>
-            <p>Sediada na cidade de Taubaté S.P, com vários Advogados atuando nas áreas de Direito de Trabalho, Direito Previdenciário e Direito Civil, Edifício Office praça Dom Epaminondas</p>
-            <a href="#contato" class="btn">Entre em contato</a>
-        </div>
-    </section>
-
-    <!-- Contato Rápido -->
-    <section class="container">
-        <h2 class="section-title">Contato Rápido</h2>
-        <div style="text-align: center; margin-bottom: 30px;">
-            <p>Clicar no número do telefone abaixo para entrar no WhatsApp dos Advogados Associados J.E.C.S</p>
-            <a href="https://wa.me/5512981387597" class="btn" target="_blank" rel="nofollow">wa.me/5512981387597</a>
-        </div>
-        <div style="text-align: center; margin-bottom: 30px;">
-            <a href="https://www.instagram.com/jecs_advocacia/" class="btn" target="_blank" rel="nofollow">www.instagram.com/jecs_advocacia/</a>
-            <p>Clicar no link acima para entrar no INSTAGRAM dos ADVOGADOS ASSOCIADOS Dr José Eduardo Costa de Souza</p>
-        </div>
-    </section>
-
-    <!-- Mapa -->
-    <section class="container">
-        <h2 class="section-title">Localização</h2>
-        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.244035466503!2d-45.5597493243552!3d-23.41741605634927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd5885e56d38cb%3A0x91c2d6a9e9de6a02!2sPra%C3%A7a%20Dom%20Epaminondas%2C%20Taubat%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1648732630304!5m2!1spt-BR!2sbr" width="100%" height="100%" style="position: absolute; top: 0; left: 0; border:0;" allowfullscreen="" loading="lazy"></iframe>
-        </div>
-        <p style="text-align: center; margin-top: 20px;">Entrar no mapa Google acima que o levará direto para o Escritório dos ADVOGADOS ASSOCIADOS J.E.C.S.</p>
-    </section>
-
-    <!-- Serviços -->
-    <section id="servicos">
+    <section class="hero" id="home">
         <div class="container">
-            <h2 class="section-title">Nossos Serviços</h2>
-            <div class="services-grid">
-                <div class="service-item">
-                    <div class="service-icon">⚖️</div>
-                    <h3>Direito Previdenciário</h3>
-                    <p>Resumindo o direito previdenciário, é o conjunto de normas que regulam os direitos relacionados à previdência social, ou seja, o sistema de proteção social que garante benefícios aos trabalhadores e seus dependentes.</p>
+            <h1>Delegado Olim no Vale do Paraíba</h1>
+            <p>Conteúdo exclusivo e estratégias de marketing para potencializar sua presença online e alcançar resultados extraordinários.</p>
+            <a href="#videos" class="btn">Ver Vídeos</a>
+        </div>
+    </section>
+
+    <!-- Sobre Section -->
+    <section class="sobre" id="sobre">
+        <div class="container">
+            <h2>Sobre o Dr. Olim</h2>
+            <div class="sobre-container">
+                <div class="sobre-img">
+                    <img src="OLIMUSAR.jpg" alt="Dr. Olim">
                 </div>
-                <div class="service-item">
-                    <div class="service-icon">📋</div>
-                    <h3>Consultoria Jurídica</h3>
-                    <p>Consultoria jurídica é um serviço oferecido por profissionais do direito que consiste em fornecer orientação e aconselhamento sobre questões legais a indivíduos, empresas ou organizações.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">👨‍👩‍👧‍👦</div>
-                    <h3>Direito da família</h3>
-                    <p>O direito de família é um ramo do direito que trata das relações familiares e dos direitos e deveres dos indivíduos dentro dessas relações.</p>
-                </div>
-                <div class="service-item">
-                    <div class="service-icon">💼</div>
-                    <h3>Direito Trabalhista</h3>
-                    <p>O Direito Trabalhista é um ramo do direito que regula as relações entre empregadores e empregados, protegendo os direitos e garantias dos trabalhadores.</p>
+                <div class="sobre-content">
+                    <h3>Biografia</h3>
+                    <p>O Dr. Olim é um especialista renomado em segurança pública e direito, com anos de experiência atuando como delegado. Sua trajetória é marcada por casos emblemáticos e contribuições significativas para a sociedade.</p>
+                    <p>Com uma abordagem inovadora, o Dr. Olim utiliza suas plataformas digitais para compartilhar conhecimento, orientar a população e promover discussões relevantes sobre segurança e justiça.</p>
+                    <p>Seu compromisso com a transparência e a educação jurídica o tornou uma referência no segmento, com milhares de seguidores engajados em suas redes sociais.</p>
+                    <a href="#contato" class="btn">Entre em Contato</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Sobre Nós -->
-    <section id="sobre" class="about">
+    <!-- Vídeos Section -->
+    <section class="videos" id="videos">
         <div class="container">
-            <h2 class="section-title">Sobre Nós</h2>
-            <div class="about-content">
-                <div>
-                    <h3>Dr José Alves de Souza</h3>
-                    <p>Em 05 de agosto de 1942 nascia na cidade de Paraibuna, José Alves de Souza, mas em 1965 fez de Taubaté seu novo lar. Em 1969 deu seus primeiros passos na área que realmente amava, iniciando seus estudos no Departamento de Ciências Jurídicas da Universidade de Taubaté. Já em 1974 fundou seu escritório, entregando muito trabalho e dedicação para seu crescimento e posteriormente ao dos integrantes que vieram a formar sua equipe.</p>
-                    <p>Anos depois, uma nova geração da família de Souza se junta à história de dedicação e sucesso, com José Eduardo Costa de Souza, filho de José Alves, ao se formar também pela Universidade de Taubaté em 1998, auxiliando seu pai desde cedo.</p>
-                </div>
-                <div class="about-image">
-                    <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000004-b841db841f/dr%20jos%C3%A9%20alves.png?ph=c1283f1f9d" alt="Dr José Alves de Souza">
-                </div>
-            </div>
-            
-            <div style="margin-top: 50px;">
-                <h3 style="text-align: center; margin-bottom: 30px;">José Eduardo Costa de Souza: Advogado Trabalhista</h3>
-                <div class="about-content">
-                    <div class="about-image">
-                        <img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000036-14a8d14a90/foto%20nova%20eduardo%20usar.jpeg?ph=c1283f1f9d" alt="José Eduardo Costa de Souza">
+            <h2>Vídeos em Destaque</h2>
+            <div class="videos-grid">
+                <!-- Vídeo 1 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/Ib9O_QPSjHI" title="Vídeo 1" allowfullscreen></iframe>
                     </div>
-                    <div>
-                        <p>Dr José Eduardo de Costa de Souza nasceu e cresceu na acolhedora cidade de Pindamonhangaba, no interior de São Paulo. Desde jovem, incentivado pelo seu pai o Dr José Alves de Souza demonstrou uma forte inclinação para defender os direitos dos outros e uma paixão pela justiça.</p>
-                        <p>Após concluir o ensino médio com excelência, José Eduardo ingressou na Universidade de Taubaté (UNITAU), onde se dedicou arduamente aos estudos de Direito. Durante sua graduação, ele se destacou não apenas por seu desempenho acadêmico exemplar, mas também por seu compromisso em ajudar seus colegas e comunidade.</p>
+                    <div class="video-info">
+                        <h3>DR.OLIM DEPUTADO E DELEGADO EM CUNHA S.P </h3>
+                        <p>No lançamento do livro "PREVENÇAO EM AÇÃO"e destinou Um Milhão de reais para o Prefeito Rodrigo do Neto para investimento na cidade.</p>
                     </div>
                 </div>
+                
+                <!-- Vídeo 2 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/TGKAn5h5BXY" title="Vídeo 2" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>DR.OLIM DEPUTADO E DELEGADO EM TAUBATÉ.</h3>
+                        <p>Montou uma barraca para proteger os romeiros que estavam sendo assaltados na Via Dutra.</p>
+                    </div>
+                </div>
+                
+                <!-- Vídeo 3 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/VGndFfVQHA4" title="Vídeo 3" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>DR.OLIM DEPUTADO E DELEGADO EM CAÇAPAVA.</h3>
+                        <p>Ele destinou Um Milhão de reais para o prefeito Yan Lopes de Almeida para investimento na segurança da cidade.</p>
+                    </div>
+                </div>
+                
+                <!-- Vídeo 4 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/zF_balQyJTY" title="Vídeo 4" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3> DR.OLIM DESTINOU UM MILHÃO DE REAIS PARA CAÇAPAVA.</h3>
+                        <p>O prefeito Yan Lopes ficou muito satisfeito e fará investimento na segurança da cidade.</p>
+                    </div>
+                </div>
+                
+                <!-- Vídeo 5 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/LTgeMXarbTU" title="Vídeo 5" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>DR.OLIM CHEGANDO NA CIDADE DE TAUBATÉ.</h3>
+                        <p>Ele veio de carro pela Via Dutra para acompanhar os romeiros indo para Aparecida do Norte.</p>
+                    </div>
+                </div>
+                
+                <!-- Vídeo 6 -->
+                <div class="video-item">
+                    <div class="video-thumb">
+                        <iframe src="https://www.youtube.com/embed/10xuInlXlyI" title="Vídeo 6" allowfullscreen></iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>DR.OLIM EM CUNHA NO RESTAURANTE CAMINHO DE OURO.</h3>
+                        <p>Ele autografou todos os livros e fez a entrega aos seus amigos que lá compareceram.</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Contato -->
-    <section id="contato" class="contact">
+    <!-- Contato Section -->
+    <section class="contato" id="contato">
         <div class="container">
-            <h2 class="section-title">Contate-nos</h2>
-            <div class="contact-info">
-                <p><strong>Visite-nos</strong></p>
-                <p>Praça Dom Epaminondas, cidade de Taubaté S.P no Edificio Óffice</p>
-                <p><strong>Entre em contato conosco</strong></p>
-                <p>12 98138 7597</p>
-                <p><strong>E-mail</strong></p>
-                <p>DrJoseeduardocostadesouza@gmail.com</p>
+            <h2>Entre em Contato</h2>
+            <div class="contato-container">
+                <div class="contato-info">
+                    <div class="info-item">
+                        <div class="info-icon">📞</div>
+                        <div class="info-content">
+                            <h3>WhatsApp</h3>
+                            <p>Dra. Eliane: (11) 98370-7096</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">✉️</div>
+                        <div class="info-content">
+                            <h3>E-mail</h3>
+                            <p>delegadoolimnovale@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <div class="info-icon">🌐</div>
+                        <div class="info-content">
+                            <h3>Redes Sociais</h3>
+                            <p>Facebook: tvvalenarede Bonani</p>
+                            <p>Instagram: @tvvalenarede2</p>
+                            <p>YouTube: tvvalenarede</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contato-form">
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="name">Nome</label>
+                            <input type="text" id="name" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="subject">Assunto</label>
+                            <input type="text" id="subject" class="form-control" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Mensagem</label>
+                            <textarea id="message" class="form-control" required></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Enviar Mensagem</button>
+                    </form>
+                </div>
             </div>
-            <a href="https://wa.me/5512981387597" class="btn" target="_blank" rel="nofollow">Entre em contato via WhatsApp</a>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="container footer-content">
-            <p>REDES SOCIAIS J.E.C.S - Advogados Associados</p>
-            <div class="social-links">
-                <a href="https://www.instagram.com/jecs_advocacia/" target="_blank" rel="nofollow">Instagram</a>
-                <a href="https://wa.me/5512981387597" target="_blank" rel="nofollow">WhatsApp</a>
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-col">
+                    <h3>Delegado Olim</h3>
+                    <p>Especialista em segurança pública e direito, compartilhando conhecimento e orientações através de plataformas digitais.</p>
+                    <div class="social-links">
+                        <a href="#" title="Facebook">f</a>
+                        <a href="#" title="Instagram">ig</a>
+                        <a href="#" title="YouTube">YT</a>
+                    </div>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Links Rápidos</h3>
+                    <a href="#home">Início</a>
+                    <a href="#sobre">Sobre</a>
+                    <a href="#videos">Vídeos</a>
+                    <a href="#contato">Contato</a>
+                </div>
+                
+                <div class="footer-col">
+                    <h3>Contato</h3>
+                    <p>Dra. Eliane: (11) 98370-7096</p>
+                    <p>delegadoolimnovale@gmail.com</p>
+                    <p>Atendimento de segunda a sexta, das 9h às 18h</p>
+                </div>
             </div>
-            <p>© 2025 Todos os direitos reservados para a mídia TVVALENAREDE</p>
+            
+            <div class="copyright">
+                <p>&copy; 2025 Delegado Olim - Todos os direitos reservado da mídia TVVALENAREDE</p>
+            </div>
         </div>
     </footer>
 
     <script>
-        // Controle do vídeo principal
-        const mainVideo = document.getElementById('mainVideo');
-        const videoOverlay = document.getElementById('videoOverlay');
-        const playButton = document.getElementById('playButton');
-        const soundControl = document.getElementById('soundControl');
-        
-        // Iniciar vídeo automaticamente (já configurado no HTML)
-        // Mas garantir que funcione em todos os navegadores
-        document.addEventListener('DOMContentLoaded', function() {
-            // Tenta reproduzir o vídeo programaticamente
-            const playPromise = mainVideo.play();
+        // Efeito de Estrelas
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            const starCount = 150;
             
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    // A reprodução automática falhou, mostrar o botão de play
-                    videoOverlay.classList.remove('hidden');
-                });
+            for (let i = 0; i < starCount; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                
+                // Tamanho aleatório entre 1 e 3px
+                const size = Math.random() * 2 + 1;
+                star.style.width = `${size}px`;
+                star.style.height = `${size}px`;
+                
+                // Posição aleatória apenas na parte superior (até 50% da tela)
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 50}%`;
+                
+                // Duração da animação aleatória
+                const duration = Math.random() * 3 + 2;
+                star.style.animationDuration = `${duration}s`;
+                
+                // Atraso aleatório para criar efeito mais natural
+                star.style.animationDelay = `${Math.random() * 5}s`;
+                
+                container.appendChild(star);
             }
-        });
+        }
         
-        // Controle do botão de play
-        playButton.addEventListener('click', function() {
-            mainVideo.play();
-            videoOverlay.classList.add('hidden');
-        });
-        
-        // Controle de som
-        let isMuted = true;
-        
-        soundControl.addEventListener('click', function() {
-            isMuted = !isMuted;
-            mainVideo.muted = isMuted;
-            
-            if (isMuted) {
-                soundControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else {
-                soundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
-            }
-        });
-        
-        // Menu mobile toggle
-        document.getElementById('mobile-menu').addEventListener('click', function() {
-            document.querySelector('.nav-menu').classList.toggle('active');
+        // Menu Mobile
+        document.querySelector('.mobile-menu').addEventListener('click', function() {
+            document.querySelector('nav ul').classList.toggle('active');
         });
         
         // Fechar menu ao clicar em um link
-        document.querySelectorAll('.nav-menu a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.querySelector('.nav-menu').classList.remove('active');
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', function() {
+                document.querySelector('nav ul').classList.remove('active');
             });
         });
+        
+        // Form submission
+        document.getElementById('contactForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Mensagem enviada com sucesso! Entraremos em contato em breve.');
+            this.reset();
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Inicializar estrelas
+        createStars();
     </script>
 </body>
 </html>
