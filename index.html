@@ -298,6 +298,65 @@
             font-size: 1.2rem;
         }
         
+        /* Botões Flutuantes */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            padding: 0 20px;
+            z-index: 99;
+            pointer-events: none;
+        }
+        
+        .floating-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 28px;
+            color: white;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease;
+            pointer-events: all;
+            text-decoration: none;
+            position: relative;
+        }
+        
+        .floating-btn:hover {
+            transform: scale(1.1);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+        }
+        
+        .floating-btn.whatsapp {
+            background-color: #25D366;
+        }
+        
+        .floating-btn.instagram {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); 
+        }
+        
+        .floating-btn-tooltip {
+            position: absolute;
+            bottom: 70px;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-size: 14px;
+            white-space: nowrap;
+            opacity: 0;
+            transition: opacity 0.3s;
+            pointer-events: none;
+        }
+        
+        .floating-btn:hover .floating-btn-tooltip {
+            opacity: 1;
+        }
+        
         /* Responsividade */
         @media (max-width: 768px) {
             .menu-toggle {
@@ -339,6 +398,16 @@
             
             .main-video {
                 height: auto;
+            }
+            
+            .floating-buttons {
+                padding: 0 15px;
+            }
+            
+            .floating-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 24px;
             }
         }
     </style>
@@ -511,6 +580,18 @@
             <p>© 2025 Todos os direitos reservados para a mídia TVVALENAREDE</p>
         </div>
     </footer>
+
+    <!-- Botões Flutuantes -->
+    <div class="floating-buttons">
+        <a href="https://www.instagram.com/jecs_advocacia/" class="floating-btn instagram" target="_blank" rel="nofollow">
+            <i class="fab fa-instagram"></i>
+            <span class="floating-btn-tooltip">Siga-nos no Instagram</span>
+        </a>
+        <a href="https://wa.me/5512981387597" class="floating-btn whatsapp" target="_blank" rel="nofollow">
+            <i class="fab fa-whatsapp"></i>
+            <span class="floating-btn-tooltip">Fale conosco no WhatsApp</span>
+        </a>
+    </div>
 
     <script>
         // Controle do vídeo principal
