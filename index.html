@@ -33,136 +33,32 @@
             padding: 0 15px;
         }
         
-        /* Novo Vídeo de Homenagem */
-        .homenagem-video-container {
+        /* Seção do Vídeo */
+        .video-section {
             width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background-color: #000;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
+            padding: 20px 0;
+            text-align: center;
         }
         
-        .homenagem-video {
-            width: 100%;
+        .video-container {
             max-width: 1000px;
-            height: auto;
-            outline: none;
-        }
-        
-        .homenagem-video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            transition: opacity 0.5s ease;
-        }
-        
-        .homenagem-video-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .homenagem-play-button {
-            font-size: 5rem;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .homenagem-play-button:hover {
-            transform: scale(1.1);
-        }
-        
-        .homenagem-sound-control {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 11;
-        }
-        
-        /* Vídeo Centralizado */
-        .main-video-container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
+            margin: 0 auto;
             position: relative;
-            overflow: hidden;
-            margin-bottom: 30px;
         }
         
-        .main-video {
+        .video-title {
+            color: white;
+            margin-bottom: 15px;
+            font-size: 1.5rem;
+        }
+        
+        .video-player {
             width: 100%;
-            max-width: 1000px;
             height: auto;
-            outline: none;
-        }
-        
-        .video-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: rgba(0, 0, 0, 0.7);
-            z-index: 10;
-            transition: opacity 0.5s ease;
-        }
-        
-        .video-overlay.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
-        
-        .play-button {
-            font-size: 5rem;
-            color: white;
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-        
-        .play-button:hover {
-            transform: scale(1.1);
-        }
-        
-        .sound-control {
-            position: absolute;
-            bottom: 20px;
-            right: 20px;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            z-index: 11;
+            max-height: 80vh;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
         }
         
         /* Header e Navegação */
@@ -458,14 +354,6 @@
                 font-size: 2rem;
             }
             
-            .play-button, .homenagem-play-button {
-                font-size: 3rem;
-            }
-            
-            .main-video, .homenagem-video {
-                height: auto;
-            }
-            
             .floating-buttons {
                 padding: 0 15px;
             }
@@ -475,41 +363,24 @@
                 height: 50px;
                 font-size: 24px;
             }
+            
+            .video-title {
+                font-size: 1.2rem;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Vídeo de Homenagem -->
-    <div class="homenagem-video-container">
-        <video class="homenagem-video" id="homenagemVideo" width="100%" playsinline muted autoplay loop>
-            <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/homenagem.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-        <div class="homenagem-video-overlay" id="homenagemVideoOverlay">
-            <div class="homenagem-play-button" id="homenagemPlayButton">
-                <i class="fas fa-play"></i>
-            </div>
+    <!-- Seção do Vídeo -->
+    <section class="video-section">
+        <div class="video-container">
+            <h2 class="video-title">Homenagem Especial</h2>
+            <video class="video-player" controls autoplay muted>
+                <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/homenagem1hd.mp4" type="video/mp4">
+                Seu navegador não suporta a reprodução de vídeos.
+            </video>
         </div>
-        <button class="homenagem-sound-control" id="homenagemSoundControl">
-            <i class="fas fa-volume-mute"></i>
-        </button>
-    </div>
-
-    <!-- Vídeo Principal Centralizado -->
-    <div class="main-video-container">
-        <video class="main-video" id="mainVideo" width="100%" playsinline muted autoplay loop>
-            <source src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/JECS%20COM%20BR%20360.mp4" type="video/mp4">
-            Seu navegador não suporta o elemento de vídeo.
-        </video>
-        <div class="video-overlay" id="videoOverlay">
-            <div class="play-button" id="playButton">
-                <i class="fas fa-play"></i>
-            </div>
-        </div>
-        <button class="sound-control" id="soundControl">
-            <i class="fas fa-volume-mute"></i>
-        </button>
-    </div>
+    </section>
 
     <!-- Header -->
     <header>
@@ -676,80 +547,6 @@
     </div>
 
     <script>
-        // Controle do vídeo de homenagem
-        const homenagemVideo = document.getElementById('homenagemVideo');
-        const homenagemVideoOverlay = document.getElementById('homenagemVideoOverlay');
-        const homenagemPlayButton = document.getElementById('homenagemPlayButton');
-        const homenagemSoundControl = document.getElementById('homenagemSoundControl');
-        
-        // Iniciar vídeo automaticamente
-        document.addEventListener('DOMContentLoaded', function() {
-            const playPromise = homenagemVideo.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    homenagemVideoOverlay.classList.remove('hidden');
-                });
-            }
-        });
-        
-        // Controle do botão de play
-        homenagemPlayButton.addEventListener('click', function() {
-            homenagemVideo.play();
-            homenagemVideoOverlay.classList.add('hidden');
-        });
-        
-        // Controle de som
-        let homenagemIsMuted = true;
-        
-        homenagemSoundControl.addEventListener('click', function() {
-            homenagemIsMuted = !homenagemIsMuted;
-            homenagemVideo.muted = homenagemIsMuted;
-            
-            if (homenagemIsMuted) {
-                homenagemSoundControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else {
-                homenagemSoundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
-            }
-        });
-        
-        // Controle do vídeo principal
-        const mainVideo = document.getElementById('mainVideo');
-        const videoOverlay = document.getElementById('videoOverlay');
-        const playButton = document.getElementById('playButton');
-        const soundControl = document.getElementById('soundControl');
-        
-        // Iniciar vídeo automaticamente
-        document.addEventListener('DOMContentLoaded', function() {
-            const playPromise = mainVideo.play();
-            
-            if (playPromise !== undefined) {
-                playPromise.catch(error => {
-                    videoOverlay.classList.remove('hidden');
-                });
-            }
-        });
-        
-        // Controle do botão de play
-        playButton.addEventListener('click', function() {
-            mainVideo.play();
-            videoOverlay.classList.add('hidden');
-        });
-        
-        // Controle de som
-        let isMuted = true;
-        
-        soundControl.addEventListener('click', function() {
-            isMuted = !isMuted;
-            mainVideo.muted = isMuted;
-            
-            if (isMuted) {
-                soundControl.innerHTML = '<i class="fas fa-volume-mute"></i>';
-            } else {
-                soundControl.innerHTML = '<i class="fas fa-volume-up"></i>';
-            }
-        });
-        
         // Menu mobile toggle
         document.getElementById('mobile-menu').addEventListener('click', function() {
             document.querySelector('.nav-menu').classList.toggle('active');
