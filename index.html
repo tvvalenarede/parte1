@@ -1,163 +1,525 @@
+# SITE MODERNO PROFISSIONAL - J.E.C.S ADVOGADOS ASSOCIADOS
+
+## NOVO index.html
+
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre Nós | J.E.C.S Advogados Associados</title>
-    <meta name="description" content="Conheça a história do escritório J.E.C.S Advogados Associados. Mais de 50 anos de tradição jurídica em Taubaté-SP.">
-    <link rel="icon" href="https://raw.githubusercontent.com/tvvalenarede/parte1/main/logocerto2025.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
-    <link rel="stylesheet" href="../css/main.css">
-    <link rel="stylesheet" href="../css/components.css">
-    <link rel="stylesheet" href="../css/pages.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>J.E.C.S Advogados Associados</title>
+<meta name="description" content="Escritório de advocacia em Taubaté especializado em Direito Trabalhista, Previdenciário, Civil e Família.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+html{
+scroll-behavior:smooth;
+}
+
+body{
+font-family:'Poppins',sans-serif;
+background:#f5f7fb;
+color:#222;
+line-height:1.7;
+}
+
+.container{
+width:100%;
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(0,0,0,0.75);
+backdrop-filter:blur(10px);
+z-index:999;
+}
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:18px 0;
+}
+
+.logo{
+color:#fff;
+font-size:24px;
+font-weight:700;
+}
+
+.menu{
+display:flex;
+gap:25px;
+list-style:none;
+}
+
+.menu a{
+color:#fff;
+text-decoration:none;
+font-weight:500;
+transition:0.3s;
+}
+
+.menu a:hover{
+color:#d4af37;
+}
+
+.hero{
+min-height:100vh;
+display:flex;
+align-items:center;
+background:
+linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),
+url('https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000036-14a8d14a90/foto%20nova%20eduardo%20usar.jpeg?ph=c1283f1f9d');
+background-size:cover;
+background-position:center;
+text-align:center;
+color:#fff;
+padding:120px 20px 80px;
+}
+
+.hero h1{
+font-size:58px;
+margin-bottom:20px;
+font-weight:700;
+}
+
+.hero p{
+max-width:850px;
+margin:auto;
+font-size:20px;
+margin-bottom:35px;
+}
+
+.btn{
+display:inline-block;
+padding:15px 35px;
+background:#d4af37;
+color:#000;
+text-decoration:none;
+border-radius:50px;
+font-weight:700;
+transition:0.3s;
+}
+
+.btn:hover{
+transform:translateY(-4px);
+background:#fff;
+}
+
+section{
+padding:90px 0;
+}
+
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:20px;
+color:#111;
+}
+
+.section-subtitle{
+text-align:center;
+max-width:800px;
+margin:0 auto 50px;
+color:#666;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:#fff;
+padding:35px 25px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card i{
+font-size:45px;
+margin-bottom:20px;
+color:#d4af37;
+}
+
+.card h3{
+margin-bottom:15px;
+}
+
+.about{
+background:#fff;
+}
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about img{
+width:100%;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.15);
+}
+
+.video-area{
+background:#111;
+color:#fff;
+text-align:center;
+}
+
+.video-wrapper{
+position:relative;
+padding-bottom:56.25%;
+height:0;
+overflow:hidden;
+border-radius:20px;
+margin-top:40px;
+}
+
+.video-wrapper iframe{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+border:none;
+}
+
+.contact{
+background:
+linear-gradient(rgba(0,0,0,0.8),rgba(0,0,0,0.8)),
+url('https://duyn491kcolsw.cloudfront.net/files/3v/3vq/3vq0qg.jpg?ph=c1283f1f9d');
+background-size:cover;
+background-position:center;
+color:#fff;
+text-align:center;
+}
+
+.contact-box{
+max-width:800px;
+margin:auto;
+}
+
+.contact-box p{
+margin-bottom:15px;
+font-size:18px;
+}
+
+footer{
+background:#000;
+color:#fff;
+text-align:center;
+padding:30px 20px;
+}
+
+.whatsapp{
+position:fixed;
+right:20px;
+bottom:20px;
+width:70px;
+height:70px;
+border-radius:50%;
+background:#25D366;
+display:flex;
+align-items:center;
+justify-content:center;
+font-size:38px;
+color:#fff;
+text-decoration:none;
+box-shadow:0 10px 20px rgba(0,0,0,0.3);
+z-index:999;
+}
+
+.mobile-btn{
+display:none;
+font-size:28px;
+color:#fff;
+cursor:pointer;
+}
+
+@media(max-width:900px){
+
+.hero h1{
+font-size:38px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.menu{
+position:absolute;
+top:80px;
+left:-100%;
+flex-direction:column;
+background:#000;
+width:100%;
+padding:30px 0;
+text-align:center;
+transition:0.4s;
+}
+
+.menu.active{
+left:0;
+}
+
+.mobile-btn{
+display:block;
+}
+}
+</style>
 </head>
 <body>
-    <header class="header scrolled">
-        <div class="container header-content">
-            <a href="../index.html" class="header-logo"><img src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/logocerto2025.png" alt="J.E.C.S Advogados"></a>
-            <nav class="nav-menu">
-                <a href="../index.html">Início</a>
-                <div class="nav-dropdown"><a href="../areas/index.html">Áreas de Atuação <i class="fas fa-chevron-down" style="font-size:0.7rem;margin-left:4px"></i></a><div class="dropdown-menu"><a href="../areas/direito-trabalhista.html">Direito Trabalhista</a><a href="../areas/direito-previdenciario.html">Direito Previdenciário</a><a href="../areas/direito-familia.html">Direito da Família</a><a href="../areas/direito-civil.html">Direito Civil</a></div></div>
-                <a href="../equipe/index.html">Equipe</a><a href="index.html" class="active">Sobre</a><a href="../contato/index.html">Contato</a>
-                <div class="nav-cta"><a href="https://wa.me/5512981387597" target="_blank" class="btn btn-primary">Fale Conosco</a></div>
-            </nav>
-            <div class="menu-toggle"><span></span><span></span><span></span></div>
-        </div>
-    </header>
 
-    <section class="page-banner">
-        <h1 data-aos="fade-up">Nossa História</h1>
-        <p class="breadcrumb" data-aos="fade-up" data-aos-delay="100"><a href="../index.html">Início</a> / Sobre</p>
-    </section>
+<header>
+<div class="container navbar">
+<div class="logo">J.E.C.S ADVOGADOS</div>
 
-    <section>
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Mais de 50 Anos de Tradição Jurídica</h2>
-                <div class="section-divider"></div>
-                <p>Uma história de dedicação, ética e compromisso com a justiça no Vale do Paraíba.</p>
-            </div>
-        </div>
-    </section>
+<ul class="menu" id="menu">
+<li><a href="#inicio">Início</a></li>
+<li><a href="#areas">Áreas</a></li>
+<li><a href="#sobre">Sobre</a></li>
+<li><a href="#video">Vídeo</a></li>
+<li><a href="#contato">Contato</a></li>
+</ul>
 
-    <section class="bg-light" style="padding-top:40px;">
-        <div class="container">
-            <div class="timeline">
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1942</div>
-                        <p>Nasce José Alves de Souza na cidade de Paraibuna, São Paulo.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1965</div>
-                        <p>José Alves faz de Taubaté seu novo lar, estabelecendo raízes no Vale do Paraíba.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1969</div>
-                        <p>Inicia seus estudos no Departamento de Ciências Jurídicas da Universidade de Taubaté.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1974</div>
-                        <p>Fundação do escritório de advocacia, entregando trabalho e dedicação para seu crescimento.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">1998</div>
-                        <p>José Eduardo Costa de Souza se forma pela Universidade de Taubaté, juntando-se ao pai na advocacia.</p>
-                    </div>
-                </div>
-                <div class="timeline-item" data-aos="fade-up">
-                    <div class="timeline-content">
-                        <div class="timeline-year">Hoje</div>
-                        <p>O escritório J.E.C.S segue forte com uma equipe completa de advogados especializados, mantendo os valores de ética e dedicação.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="mobile-btn" id="mobileBtn">
+<i class="fa-solid fa-bars"></i>
+</div>
+</div>
+</header>
 
-    <section>
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Missão, Visão e Valores</h2>
-                <div class="section-divider"></div>
-            </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:40px;" data-aos="fade-up">
-                <div style="text-align:center; padding:30px;">
-                    <div style="font-size:2.5rem; color:#C9A84C; margin-bottom:20px;"><i class="fas fa-bullseye"></i></div>
-                    <h3>Missão</h3>
-                    <p>Oferecer soluções jurídicas eficazes e acessíveis, defendendo os direitos de nossos clientes com ética e dedicação.</p>
-                </div>
-                <div style="text-align:center; padding:30px;">
-                    <div style="font-size:2.5rem; color:#C9A84C; margin-bottom:20px;"><i class="fas fa-eye"></i></div>
-                    <h3>Visão</h3>
-                    <p>Ser referência em advocacia no Vale do Paraíba, reconhecidos pela excelência, tradição e comprometimento com a justiça.</p>
-                </div>
-                <div style="text-align:center; padding:30px;">
-                    <div style="font-size:2.5rem; color:#C9A84C; margin-bottom:20px;"><i class="fas fa-gem"></i></div>
-                    <h3>Valores</h3>
-                    <p>Ética profissional, transparência, respeito ao cliente, dedicação integral e busca constante por atualização.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<section class="hero" id="inicio">
+<div class="container">
+<h1>Advocacia Moderna e Estratégica</h1>
+<p>
+Escritório de advocacia em Taubaté especializado em Direito Trabalhista, Previdenciário, Civil e Família.
+Atendimento profissional, humano e personalizado.
+</p>
+<a href="https://wa.me/5512981387597" target="_blank" class="btn">
+FALAR NO WHATSAPP
+</a>
+</div>
+</section>
 
-    <section class="bg-light">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2>Localização</h2>
-                <div class="section-divider"></div>
-                <p>Estamos localizados no coração de Taubaté, no Edifício Office, Praça Dom Epaminondas.</p>
-            </div>
-            <div style="border-radius:12px; overflow:hidden; box-shadow:0 4px 20px rgba(0,0,0,0.12); max-width:900px; margin:0 auto;" data-aos="fade-up">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3660.244035466503!2d-45.5597493243552!3d-23.41741605634927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94cd5885e56d38cb%3A0x91c2d6a9e9de6a02!2sPra%C3%A7a%20Dom%20Epaminondas%2C%20Taubat%C3%A9%20-%20SP!5e0!3m2!1spt-BR!2sbr!4v1648732630304!5m2!1spt-BR!2sbr" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-            </div>
-        </div>
-    </section>
+<section id="areas">
+<div class="container">
+<h2 class="section-title">Áreas de Atuação</h2>
+<p class="section-subtitle">
+Equipe preparada para atuar com excelência jurídica e atendimento profissional.
+</p>
 
-    <!-- Vídeo Homenagem (DISCRETO) -->
-    <section>
-        <div class="container">
-            <div class="video-homenagem" data-aos="fade-up">
-                <h3>Homenagem Especial</h3>
-                <p class="video-subtitle">Uma homenagem à trajetória e dedicação de nossa equipe.</p>
-                <div class="video-wrapper">
-                    <iframe src="https://www.youtube.com/embed/QolRTuqinOs" title="Homenagem J.E.C.S" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-                </div>
-            </div>
-        </div>
-    </section>
+<div class="cards">
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-col"><div class="footer-logo"><img src="https://raw.githubusercontent.com/tvvalenarede/parte1/main/logocerto2025.png" alt="J.E.C.S"></div><p>Escritório de Advogados Associados do Vale do Paraíba.</p><div class="footer-social"><a href="https://www.instagram.com/jecs_advocacia/" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://wa.me/5512981387597" target="_blank"><i class="fab fa-whatsapp"></i></a></div></div>
-                <div class="footer-col"><h4>Navegação</h4><a href="../index.html">Início</a><a href="../areas/index.html">Áreas</a><a href="../equipe/index.html">Equipe</a><a href="index.html">Sobre</a><a href="../contato/index.html">Contato</a></div>
-                <div class="footer-col"><h4>Áreas</h4><a href="../areas/direito-trabalhista.html">Trabalhista</a><a href="../areas/direito-previdenciario.html">Previdenciário</a><a href="../areas/direito-familia.html">Família</a><a href="../areas/direito-civil.html">Civil</a></div>
-                <div class="footer-col"><h4>Contato</h4><a href="#"><i class="fas fa-map-marker-alt"></i> Praça Dom Epaminondas, Taubaté-SP</a><a href="tel:+5512981387597"><i class="fas fa-phone"></i> (12) 98138-7597</a><a href="mailto:DrJoseeduardocostadesouza@gmail.com"><i class="fas fa-envelope"></i> Email</a></div>
-            </div>
-            <div class="footer-divider"></div>
-            <div class="footer-bottom"><p>© 2025 J.E.C.S — Advogados Associados. Todos os direitos reservados.</p></div>
-        </div>
-    </footer>
+<div class="card">
+<i class="fa-solid fa-scale-balanced"></i>
+<h3>Direito Trabalhista</h3>
+<p>
+Defesa completa dos direitos do trabalhador e atuação em reclamações trabalhistas.
+</p>
+</div>
 
-    <div class="floating-buttons">
-        <a href="https://www.instagram.com/jecs_advocacia/" target="_blank" class="floating-btn instagram"><i class="fab fa-instagram"></i></a>
-        <a href="https://wa.me/5512981387597" target="_blank" class="floating-btn whatsapp"><i class="fab fa-whatsapp"></i></a>
-    </div>
+<div class="card">
+<i class="fa-solid fa-landmark"></i>
+<h3>Direito Previdenciário</h3>
+<p>
+Aposentadorias, benefícios do INSS, revisões e planejamento previdenciário.
+</p>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
-    <script src="../js/main.js"></script>
+<div class="card">
+<i class="fa-solid fa-handshake"></i>
+<h3>Direito Civil</h3>
+<p>
+Contratos, indenizações, acordos e defesa de direitos civis.
+</p>
+</div>
+
+<div class="card">
+<i class="fa-solid fa-people-roof"></i>
+<h3>Direito de Família</h3>
+<p>
+Divórcio, guarda, pensão alimentícia e questões familiares.
+</p>
+</div>
+
+</div>
+</div>
+</section>
+
+<section class="about" id="sobre">
+<div class="container">
+<h2 class="section-title">Nossa História</h2>
+
+<div class="about-grid">
+<div>
+<img src="https://c1283f1f9d.cbaul-cdnwnd.com/333e2bbb195c46f8652dab0ae52cdd80/200000004-b841db841f/dr%20jos%C3%A9%20alves.png?ph=c1283f1f9d">
+</div>
+
+<div>
+<h3 style="font-size:32px;margin-bottom:20px;">
+Tradição e Confiança
+</h3>
+
+<p>
+O escritório J.E.C.S Advogados Associados possui tradição jurídica no Vale do Paraíba, atuando com seriedade, ética e compromisso com seus clientes.
+</p>
+
+<br>
+
+<p>
+A equipe oferece atendimento especializado em diversas áreas do Direito, sempre buscando soluções eficientes e estratégicas.
+</p>
+
+<br>
+
+<p>
+Localizado em Taubaté-SP, o escritório atende clientes com dedicação e acompanhamento profissional.
+</p>
+</div>
+</div>
+</div>
+</section>
+
+<section class="video-area" id="video">
+<div class="container">
+<h2 class="section-title" style="color:white;">
+Homenagem Especial
+</h2>
+
+<div class="video-wrapper">
+<iframe src="https://www.youtube.com/embed/QolRTuqinOs" allowfullscreen></iframe>
+</div>
+</div>
+</section>
+
+<section class="contact" id="contato">
+<div class="container">
+<div class="contact-box">
+<h2 class="section-title" style="color:white;">
+Entre em Contato
+</h2>
+
+<p>
+<i class="fa-solid fa-location-dot"></i>
+Praça Dom Epaminondas - Taubaté/SP
+</p>
+
+<p>
+<i class="fa-solid fa-phone"></i>
+(12) 98138-7597
+</p>
+
+<p>
+<i class="fa-solid fa-envelope"></i>
+DrJoseeduardocostadesouza@gmail.com
+</p>
+
+<br>
+
+<a href="https://wa.me/5512981387597" class="btn" target="_blank">
+ATENDIMENTO VIA WHATSAPP
+</a>
+</div>
+</div>
+</section>
+
+<footer>
+<p>
+© 2026 J.E.C.S Advogados Associados - Todos os direitos reservados.
+</p>
+</footer>
+
+<a href="https://wa.me/5512981387597" class="whatsapp" target="_blank">
+<i class="fa-brands fa-whatsapp"></i>
+</a>
+
+<script>
+const mobileBtn = document.getElementById('mobileBtn');
+const menu = document.getElementById('menu');
+
+mobileBtn.addEventListener('click',()=>{
+menu.classList.toggle('active');
+});
+</script>
+
 </body>
 </html>
+```
+
+# COMO PUBLICAR
+
+1. Apague todos os arquivos antigos do repositório.
+
+2. Crie apenas UM arquivo:
+
+```text
+index.html
+```
+
+3. Cole o código acima.
+
+4. Faça Commit Changes.
+
+5. Vá em:
+
+```text
+Settings → Pages
+```
+
+6. Configure:
+
+```text
+Deploy from a branch
+```
+
+Depois:
+
+```text
+main
+```
+
+E:
+
+```text
+/root
+```
+
+7. Clique em:
+
+```text
+Save
+```
+
+8. Aguarde alguns minutos.
+
+O site ficará online no GitHub Pages.
